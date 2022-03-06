@@ -14,11 +14,11 @@ namespace Queues
     {
         class Time
         {
-            Time(int hours)
+            public Time(int hours)
             {
                 this.hours = hours;
             }
-            Time(int hours, int minutes)
+            public Time(int hours, int minutes)
             {
                 this.hours = hours;
                 this.minutes = minutes;
@@ -92,19 +92,9 @@ namespace Queues
         public Form1()
         {
             InitializeComponent();
+            regularTime = new Time(9, 0);
             ListKas1.DrawMode = DrawMode.OwnerDrawFixed;
             ListKas1.DrawItem += ListKas1_DrawItem;
-        }
-
-        
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void regularTime_timer_Tick(object sender, EventArgs e)
-        {
-            regularTime.increaseminute();
         }
 
         private void panel2_Paint(object sender, PaintEventArgs e)
@@ -116,6 +106,18 @@ namespace Queues
         {
             TextRenderer.DrawText(e.Graphics, ListKas1.Items[e.Index].ToString(), e.Font,
                 e.Bounds, e.ForeColor, e.BackColor, TextFormatFlags.HorizontalCenter);
+        }
+
+        private void regularTime_timer_Tick_1(object sender, EventArgs e)
+        {
+            regularTime.increaseminute();
+            time_label.Text = "Time: " + regularTime.getTime();
+            door_label.Text = "Door: " + "Open";
+        }
+
+        private void Start_btn_Click(object sender, EventArgs e)
+        {
+            regularTime_timer.Enabled = true;
         }
     }
 }
