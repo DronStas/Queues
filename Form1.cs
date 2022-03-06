@@ -92,17 +92,30 @@ namespace Queues
         public Form1()
         {
             InitializeComponent();
+            ListKas1.DrawMode = DrawMode.OwnerDrawFixed;
+            ListKas1.DrawItem += ListKas1_DrawItem;
         }
 
         
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         private void regularTime_timer_Tick(object sender, EventArgs e)
         {
             regularTime.increaseminute();
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+            //Name_kas1.Text += "\nКлиент";
+        }
+
+        private void ListKas1_DrawItem(object sender, DrawItemEventArgs e)
+        {
+            TextRenderer.DrawText(e.Graphics, ListKas1.Items[e.Index].ToString(), e.Font,
+                e.Bounds, e.ForeColor, e.BackColor, TextFormatFlags.HorizontalCenter);
         }
     }
 }
