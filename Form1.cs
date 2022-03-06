@@ -204,7 +204,7 @@ namespace Queues
         {
             addCust();
             Random x = new Random();
-            int n = x.Next(1000, 5000);
+            int n = x.Next(100, 500);
             addClient_timer.Interval = n;
         }
         private void addCust()
@@ -227,9 +227,21 @@ namespace Queues
                 minqueu = ListKas3.Items.Count;
                 minIndex = 2;
             }
-                minqueu = ListKas3.Items.Count;
-            listbox[minIndex].Items.Add(custIndex);
-            custIndex++;
+            if (minqueu < 6)
+            {
+                listbox[minIndex].Items.Add(custIndex);
+            }
+            else
+            {
+
+            }
+                custIndex++;
+            
+        }
+
+        private void kas1_timer_Tick(object sender, EventArgs e)
+        {
+
         }
     }
 }

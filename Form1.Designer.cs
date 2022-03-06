@@ -50,6 +50,9 @@ namespace Queues
             this.Name_kas1 = new System.Windows.Forms.Label();
             this.regularTime_timer = new System.Windows.Forms.Timer(this.components);
             this.addClient_timer = new System.Windows.Forms.Timer(this.components);
+            this.kas1_timer = new System.Windows.Forms.Timer(this.components);
+            this.kas2_timer = new System.Windows.Forms.Timer(this.components);
+            this.kas3_timer = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.stsp_dgv)).BeginInit();
             this.panel2.SuspendLayout();
@@ -326,6 +329,10 @@ namespace Queues
             // 
             this.addClient_timer.Tick += new System.EventHandler(this.addClient_timer_Tick);
             // 
+            // kas1_timer
+            // 
+            this.kas1_timer.Tick += new System.EventHandler(this.kas1_timer_Tick);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -368,6 +375,9 @@ namespace Queues
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label door_label;
         private System.Windows.Forms.Timer addClient_timer;
+        private System.Windows.Forms.Timer kas1_timer;
+        private System.Windows.Forms.Timer kas2_timer;
+        private System.Windows.Forms.Timer kas3_timer;
     }
 }
 
