@@ -30,12 +30,29 @@ namespace Queues
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            this.regularTime_timer = new System.Windows.Forms.Timer(this.components);
+            this.SuspendLayout();
+            // 
+            // regularTime_timer
+            // 
+            this.regularTime_timer.Interval = 10000;
+            this.regularTime_timer.Tick += new System.EventHandler(this.regularTime_timer_Tick);
+            // 
+            // Form1
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1374, 700);
+            this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private System.Windows.Forms.Timer regularTime_timer;
     }
 }
 
