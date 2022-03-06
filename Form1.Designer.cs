@@ -181,6 +181,7 @@ namespace Queues
             this.ListKas3.Name = "ListKas3";
             this.ListKas3.Size = new System.Drawing.Size(150, 570);
             this.ListKas3.TabIndex = 7;
+            this.ListKas3.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.ListKas3_DrawItem);
             // 
             // ListKas2
             // 
@@ -202,6 +203,7 @@ namespace Queues
             this.ListKas2.Name = "ListKas2";
             this.ListKas2.Size = new System.Drawing.Size(150, 572);
             this.ListKas2.TabIndex = 6;
+            this.ListKas2.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.ListKas2_DrawItem);
             // 
             // ListKas1
             // 
