@@ -62,7 +62,7 @@ namespace Queues
             this.panel1.Font = new System.Drawing.Font("Arial Narrow", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(200, 578);
+            this.panel1.Size = new System.Drawing.Size(200, 695);
             this.panel1.TabIndex = 0;
             // 
             // Start_btn
@@ -76,7 +76,7 @@ namespace Queues
             this.Start_btn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.Start_btn.Font = new System.Drawing.Font("Forte", 25.8F);
             this.Start_btn.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.Start_btn.Location = new System.Drawing.Point(0, 478);
+            this.Start_btn.Location = new System.Drawing.Point(0, 595);
             this.Start_btn.Name = "Start_btn";
             this.Start_btn.Size = new System.Drawing.Size(200, 50);
             this.Start_btn.TabIndex = 3;
@@ -90,7 +90,7 @@ namespace Queues
             this.Pause_btn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.Pause_btn.Font = new System.Drawing.Font("Forte", 25.8F);
             this.Pause_btn.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.Pause_btn.Location = new System.Drawing.Point(0, 528);
+            this.Pause_btn.Location = new System.Drawing.Point(0, 645);
             this.Pause_btn.Name = "Pause_btn";
             this.Pause_btn.Size = new System.Drawing.Size(200, 50);
             this.Pause_btn.TabIndex = 2;
@@ -157,7 +157,7 @@ namespace Queues
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(200, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1061, 578);
+            this.panel2.Size = new System.Drawing.Size(1061, 695);
             this.panel2.TabIndex = 1;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
@@ -166,7 +166,7 @@ namespace Queues
             this.ListKas3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.ListKas3.BackColor = System.Drawing.Color.SkyBlue;
-            this.ListKas3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ListKas3.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.ListKas3.Font = new System.Drawing.Font("Arial Narrow", 36F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.ListKas3.ForeColor = System.Drawing.Color.DarkOrange;
             this.ListKas3.FormattingEnabled = true;
@@ -179,7 +179,7 @@ namespace Queues
             "5"});
             this.ListKas3.Location = new System.Drawing.Point(496, 81);
             this.ListKas3.Name = "ListKas3";
-            this.ListKas3.Size = new System.Drawing.Size(150, 458);
+            this.ListKas3.Size = new System.Drawing.Size(150, 570);
             this.ListKas3.TabIndex = 7;
             // 
             // ListKas2
@@ -200,7 +200,7 @@ namespace Queues
             "5"});
             this.ListKas2.Location = new System.Drawing.Point(267, 81);
             this.ListKas2.Name = "ListKas2";
-            this.ListKas2.Size = new System.Drawing.Size(150, 458);
+            this.ListKas2.Size = new System.Drawing.Size(150, 572);
             this.ListKas2.TabIndex = 6;
             // 
             // ListKas1
@@ -221,7 +221,7 @@ namespace Queues
             "5"});
             this.ListKas1.Location = new System.Drawing.Point(39, 81);
             this.ListKas1.Name = "ListKas1";
-            this.ListKas1.Size = new System.Drawing.Size(150, 458);
+            this.ListKas1.Size = new System.Drawing.Size(150, 572);
             this.ListKas1.TabIndex = 5;
             this.ListKas1.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.ListKas1_DrawItem);
             // 
@@ -236,7 +236,7 @@ namespace Queues
             this.dgv_klient.Name = "dgv_klient";
             this.dgv_klient.RowHeadersVisible = false;
             this.dgv_klient.RowHeadersWidth = 51;
-            this.dgv_klient.Size = new System.Drawing.Size(346, 483);
+            this.dgv_klient.Size = new System.Drawing.Size(346, 575);
             this.dgv_klient.TabIndex = 4;
             // 
             // Name_klient
@@ -283,7 +283,7 @@ namespace Queues
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1261, 578);
+            this.ClientSize = new System.Drawing.Size(1261, 695);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "Form1";
