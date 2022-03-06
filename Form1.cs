@@ -38,9 +38,36 @@ namespace Queues
                 else
                     throw new Exception("!(minutes>=0 && minutes<=60)");
             }
+
+            public Time()
+            {
+            }
+
             private int hours = 12;
             private int minutes = 0;
-
+                
+            public void Serch(String startbox)
+            {
+                string sb = "";
+                int sh,sm;
+                int i;
+                for (i = 0; i<startbox.Length;i++)
+                {
+                    if (startbox[i].ToString() != ":")
+                        sb += startbox[i].ToString();
+                    else break;
+                }
+                
+                sh = Convert.ToInt32(sb);
+                sb = "";
+                for (int j = i+1;j<startbox.Length;j++)
+                {
+                    sb += startbox[j].ToString();                    
+                }
+                sm = Convert.ToInt32(sb);
+                hours = sh;
+                minutes = sm;
+            }
             public void increashours()
             {
                 if (hours == 23)
@@ -155,8 +182,7 @@ namespace Queues
         {
             InitializeComponent();
             stsp_dgv.Rows.Add();
-            regularTime = new Time(9, 0);
-
+            regularTime = new Time();
             ListKas1.DrawMode = DrawMode.OwnerDrawFixed;
             ListKas1.DrawItem += ListKas1_DrawItem;
             ListKas2.DrawMode = DrawMode.OwnerDrawFixed;
@@ -171,7 +197,7 @@ namespace Queues
         }
         private void Start_btn_Click(object sender, EventArgs e)
         {
-            regularTime = new Time(9, 0);
+            regularTime.Serch(startbox.Text);
             regularTime_timer.Enabled = true;
             addClient_timer.Enabled = true;
         }
