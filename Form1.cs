@@ -87,7 +87,41 @@ namespace Queues
         Time regularTime;
         class Customer
         {
+            private int number;
+            private Time start;
+            private Time stop;
+            private string status;
+            Customer(int number)
+            {
+                this.number = number;
+            }
+            Customer(Time start, Time stop)
+            {
+                this.start = start;
+                this.stop = stop;
+            }
 
+
+            Customer(String status)
+            {
+                this.status = status;
+            }
+
+            public void setStatus(int number)
+            {
+                String status = "";
+                if (number == 0)
+                {
+                    status = number + "Отказ";
+                }
+                else status = number + "Принято";
+
+            }
+
+            public String getStatus(String status)
+            {
+                return status;
+            }
         }
         public Form1()
         {
@@ -95,6 +129,10 @@ namespace Queues
             regularTime = new Time(9, 0);
             ListKas1.DrawMode = DrawMode.OwnerDrawFixed;
             ListKas1.DrawItem += ListKas1_DrawItem;
+            ListKas2.DrawMode = DrawMode.OwnerDrawFixed;
+            ListKas2.DrawItem += ListKas2_DrawItem;
+            ListKas3.DrawMode = DrawMode.OwnerDrawFixed;
+            ListKas3.DrawItem += ListKas3_DrawItem;
         }
 
         private void panel2_Paint(object sender, PaintEventArgs e)
@@ -115,22 +153,17 @@ namespace Queues
         {
             regularTime_timer.Enabled = true;
         }
-        private void ListKas1_DrawItem(object sender, DrawItemEventArgs e)
-        {
-            TextRenderer.DrawText(e.Graphics, ListKas1.Items[e.Index].ToString(), e.Font,
-                e.Bounds, e.ForeColor, e.BackColor, TextFormatFlags.HorizontalCenter);
-        }
 
         private void ListKas2_DrawItem(object sender, DrawItemEventArgs e)
         {
             TextRenderer.DrawText(e.Graphics, ListKas2.Items[e.Index].ToString(), e.Font,
-                    e.Bounds, e.ForeColor, e.BackColor, TextFormatFlags.HorizontalCenter);
+                           e.Bounds, e.ForeColor, e.BackColor, TextFormatFlags.HorizontalCenter);
         }
 
         private void ListKas3_DrawItem(object sender, DrawItemEventArgs e)
         {
             TextRenderer.DrawText(e.Graphics, ListKas3.Items[e.Index].ToString(), e.Font,
-        e.Bounds, e.ForeColor, e.BackColor, TextFormatFlags.HorizontalCenter);
+                                      e.Bounds, e.ForeColor, e.BackColor, TextFormatFlags.HorizontalCenter);
         }
     }
 }
