@@ -87,22 +87,55 @@ namespace Queues
         Time regularTime;
         class Customer
         {
+            private int number;
+            private Time start;
+            private Time stop;
+            private string status;
+            Customer (int number)
+            {
+                this.number = number;
+            }
+            Customer (Time start, Time stop)
+            {
+                this.start = start;
+                this.stop = stop;
+            }
 
+            
+            Customer (String status)
+            {
+                this.status = status;
+            }
+            
+            public void setStatus(int number)
+            {                
+                String status = "";                
+                if (number == 0)
+                {
+                    status = number + "Отказ";
+                }
+                else status = number + "Принято";               
+                
+            }
+
+            public String getStatus(String status)
+            {
+                return status;
+            }
         }
         public Form1()
         {
             InitializeComponent();
         }
 
-        
-        private void Form1_Load(object sender, EventArgs e)
-        {
 
-        }
 
         private void regularTime_timer_Tick(object sender, EventArgs e)
         {
             regularTime.increaseminute();
         }
+        
+    
+
     }
 }
