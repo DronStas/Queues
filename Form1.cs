@@ -102,11 +102,7 @@ namespace Queues
             //Name_kas1.Text += "\nКлиент";
         }
 
-        private void ListKas1_DrawItem(object sender, DrawItemEventArgs e)
-        {
-            TextRenderer.DrawText(e.Graphics, ListKas1.Items[e.Index].ToString(), e.Font,
-                e.Bounds, e.ForeColor, e.BackColor, TextFormatFlags.HorizontalCenter);
-        }
+
 
         private void regularTime_timer_Tick_1(object sender, EventArgs e)
         {
@@ -118,6 +114,23 @@ namespace Queues
         private void Start_btn_Click(object sender, EventArgs e)
         {
             regularTime_timer.Enabled = true;
+        }
+        private void ListKas1_DrawItem(object sender, DrawItemEventArgs e)
+        {
+            TextRenderer.DrawText(e.Graphics, ListKas1.Items[e.Index].ToString(), e.Font,
+                e.Bounds, e.ForeColor, e.BackColor, TextFormatFlags.HorizontalCenter);
+        }
+
+        private void ListKas2_DrawItem(object sender, DrawItemEventArgs e)
+        {
+            TextRenderer.DrawText(e.Graphics, ListKas2.Items[e.Index].ToString(), e.Font,
+                    e.Bounds, e.ForeColor, e.BackColor, TextFormatFlags.HorizontalCenter);
+        }
+
+        private void ListKas3_DrawItem(object sender, DrawItemEventArgs e)
+        {
+            TextRenderer.DrawText(e.Graphics, ListKas3.Items[e.Index].ToString(), e.Font,
+        e.Bounds, e.ForeColor, e.BackColor, TextFormatFlags.HorizontalCenter);
         }
     }
 }
