@@ -35,7 +35,7 @@ namespace Queues
             this.door_label = new System.Windows.Forms.Label();
             this.Start_btn = new System.Windows.Forms.Button();
             this.Pause_btn = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.stsp_dgv = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.time_label = new System.Windows.Forms.Label();
@@ -49,8 +49,9 @@ namespace Queues
             this.Name_kas2 = new System.Windows.Forms.Label();
             this.Name_kas1 = new System.Windows.Forms.Label();
             this.regularTime_timer = new System.Windows.Forms.Timer(this.components);
+            this.addClient_timer = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stsp_dgv)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_klient)).BeginInit();
             this.SuspendLayout();
@@ -62,7 +63,7 @@ namespace Queues
             this.panel1.Controls.Add(this.door_label);
             this.panel1.Controls.Add(this.Start_btn);
             this.panel1.Controls.Add(this.Pause_btn);
-            this.panel1.Controls.Add(this.dataGridView1);
+            this.panel1.Controls.Add(this.stsp_dgv);
             this.panel1.Controls.Add(this.time_label);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Font = new System.Drawing.Font("Arial Narrow", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -79,7 +80,7 @@ namespace Queues
             this.label2.Dock = System.Windows.Forms.DockStyle.Top;
             this.label2.Font = new System.Drawing.Font("Forte", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label2.Location = new System.Drawing.Point(0, 189);
+            this.label2.Location = new System.Drawing.Point(0, 161);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(115, 47);
@@ -93,7 +94,7 @@ namespace Queues
             this.door_label.Dock = System.Windows.Forms.DockStyle.Top;
             this.door_label.Font = new System.Drawing.Font("Forte", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.door_label.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.door_label.Location = new System.Drawing.Point(0, 142);
+            this.door_label.Location = new System.Drawing.Point(0, 114);
             this.door_label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.door_label.Name = "door_label";
             this.door_label.Size = new System.Drawing.Size(239, 47);
@@ -135,27 +136,28 @@ namespace Queues
             this.Pause_btn.Text = "Pause";
             this.Pause_btn.UseVisualStyleBackColor = false;
             // 
-            // dataGridView1
+            // stsp_dgv
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AllowUserToResizeColumns = false;
-            this.dataGridView1.AllowUserToResizeRows = false;
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.SkyBlue;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.stsp_dgv.AllowUserToAddRows = false;
+            this.stsp_dgv.AllowUserToDeleteRows = false;
+            this.stsp_dgv.AllowUserToResizeColumns = false;
+            this.stsp_dgv.AllowUserToResizeRows = false;
+            this.stsp_dgv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.stsp_dgv.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
+            this.stsp_dgv.BackgroundColor = System.Drawing.Color.SkyBlue;
+            this.stsp_dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.stsp_dgv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
             this.Column2});
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 47);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
-            this.dataGridView1.MultiSelect = false;
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.Size = new System.Drawing.Size(267, 95);
-            this.dataGridView1.TabIndex = 1;
+            this.stsp_dgv.Dock = System.Windows.Forms.DockStyle.Top;
+            this.stsp_dgv.Location = new System.Drawing.Point(0, 47);
+            this.stsp_dgv.Margin = new System.Windows.Forms.Padding(4);
+            this.stsp_dgv.MultiSelect = false;
+            this.stsp_dgv.Name = "stsp_dgv";
+            this.stsp_dgv.RowHeadersVisible = false;
+            this.stsp_dgv.RowHeadersWidth = 51;
+            this.stsp_dgv.Size = new System.Drawing.Size(267, 67);
+            this.stsp_dgv.TabIndex = 1;
             // 
             // Column1
             // 
@@ -255,17 +257,21 @@ namespace Queues
             // 
             // dgv_klient
             // 
+            this.dgv_klient.AllowUserToAddRows = false;
+            this.dgv_klient.AllowUserToDeleteRows = false;
             this.dgv_klient.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgv_klient.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv_klient.BackgroundColor = System.Drawing.Color.SkyBlue;
             this.dgv_klient.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_klient.Location = new System.Drawing.Point(937, 100);
             this.dgv_klient.Margin = new System.Windows.Forms.Padding(4);
             this.dgv_klient.Name = "dgv_klient";
+            this.dgv_klient.ReadOnly = true;
             this.dgv_klient.RowHeadersVisible = false;
             this.dgv_klient.RowHeadersWidth = 51;
-            this.dgv_klient.Size = new System.Drawing.Size(460, 594);
+            this.dgv_klient.Size = new System.Drawing.Size(460, 554);
             this.dgv_klient.TabIndex = 4;
             // 
             // Name_klient
@@ -316,6 +322,10 @@ namespace Queues
             // 
             this.regularTime_timer.Tick += new System.EventHandler(this.regularTime_timer_Tick_1);
             // 
+            // addClient_timer
+            // 
+            this.addClient_timer.Tick += new System.EventHandler(this.addClient_timer_Tick);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -328,7 +338,7 @@ namespace Queues
             this.Text = "Form1";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stsp_dgv)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_klient)).EndInit();
@@ -341,7 +351,7 @@ namespace Queues
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button Start_btn;
         private System.Windows.Forms.Button Pause_btn;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView stsp_dgv;
         private System.Windows.Forms.Label time_label;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.ListBox ListKas1;
@@ -357,6 +367,7 @@ namespace Queues
         private System.Windows.Forms.Timer regularTime_timer;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label door_label;
+        private System.Windows.Forms.Timer addClient_timer;
     }
 }
 
