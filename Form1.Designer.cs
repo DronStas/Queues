@@ -179,7 +179,7 @@ namespace Queues
             this.ListKas3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.ListKas3.BackColor = System.Drawing.Color.SkyBlue;
-            this.ListKas3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ListKas3.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.ListKas3.Font = new System.Drawing.Font("Arial Narrow", 36F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.ListKas3.ForeColor = System.Drawing.Color.DarkOrange;
             this.ListKas3.FormattingEnabled = true;
@@ -195,6 +195,7 @@ namespace Queues
             this.ListKas3.Name = "ListKas3";
             this.ListKas3.Size = new System.Drawing.Size(199, 554);
             this.ListKas3.TabIndex = 7;
+            this.ListKas3.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.ListKas3_DrawItem);
             // 
             // ListKas2
             // 
@@ -217,6 +218,7 @@ namespace Queues
             this.ListKas2.Name = "ListKas2";
             this.ListKas2.Size = new System.Drawing.Size(199, 554);
             this.ListKas2.TabIndex = 6;
+            this.ListKas2.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.ListKas2_DrawItem);
             // 
             // ListKas1
             // 
