@@ -30,7 +30,7 @@ namespace Queues
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btn_stop = new System.Windows.Forms.Button();
             this.stopbox = new System.Windows.Forms.ComboBox();
@@ -338,7 +338,7 @@ namespace Queues
             this.ListKas3.Location = new System.Drawing.Point(661, 100);
             this.ListKas3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ListKas3.Name = "ListKas3";
-            this.ListKas3.Size = new System.Drawing.Size(199, 483);
+            this.ListKas3.Size = new System.Drawing.Size(199, 552);
             this.ListKas3.TabIndex = 7;
             this.ListKas3.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.ListKas3_DrawItem);
             // 
@@ -355,7 +355,7 @@ namespace Queues
             this.ListKas2.Location = new System.Drawing.Point(356, 100);
             this.ListKas2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ListKas2.Name = "ListKas2";
-            this.ListKas2.Size = new System.Drawing.Size(199, 485);
+            this.ListKas2.Size = new System.Drawing.Size(199, 554);
             this.ListKas2.TabIndex = 6;
             this.ListKas2.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.ListKas2_DrawItem);
             // 
@@ -372,7 +372,7 @@ namespace Queues
             this.ListKas1.Location = new System.Drawing.Point(52, 100);
             this.ListKas1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ListKas1.Name = "ListKas1";
-            this.ListKas1.Size = new System.Drawing.Size(199, 485);
+            this.ListKas1.Size = new System.Drawing.Size(199, 554);
             this.ListKas1.TabIndex = 5;
             this.ListKas1.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.ListKas1_DrawItem);
             // 
@@ -386,14 +386,14 @@ namespace Queues
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgv_klient.BackgroundColor = System.Drawing.Color.SkyBlue;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial Narrow", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_klient.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial Narrow", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_klient.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgv_klient.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_klient.Location = new System.Drawing.Point(941, 100);
             this.dgv_klient.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);

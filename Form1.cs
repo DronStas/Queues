@@ -406,6 +406,7 @@ namespace Queues
             dgv_enter(cust);
             // зеленый
             kas_label[kasIndex].ForeColor = Color.Green;
+            kas_label[kasIndex].Text = "Касса №" + (kasIndex + 1);
             kas_timer[kasIndex].Enabled = false;
         }
         private void labael_enter(Label label,int Index)
