@@ -405,7 +405,7 @@ namespace Queues
 
             dgv_enter(cust);
             // зеленый
-            kas_label[kasIndex].ForeColor = Color.Green;
+            kas_label[kasIndex].ForeColor = Color.GreenYellow;
             kas_label[kasIndex].Text = "Касса №" + (kasIndex + 1);
             kas_timer[kasIndex].Enabled = false;
         }
@@ -415,7 +415,7 @@ namespace Queues
             label.Text = "Касса №" + (Index + 1) + "\nКлиент-" + cust.getNumber();
             listbox[Index].Items.RemoveAt(0);
             // крассный
-            kas_label[Index].ForeColor = Color.Red;
+            kas_label[Index].ForeColor = Color.DarkRed;
             kas_timer[Index].Enabled = true;
         }
         private void dgv_enter(Customer cust)
