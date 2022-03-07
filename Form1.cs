@@ -335,7 +335,7 @@ namespace Queues
         { 
             addCust();
             Random x = new Random();
-            int n = x.Next(500,2000);
+            int n = x.Next(500,1000);
             addClient_timer.Interval = n;
 
         }
@@ -365,6 +365,8 @@ namespace Queues
             else
             {
                 cust.setStatus(0);
+                cust.setTimeStop(regularTime);
+                dgv_enter(cust);
             }
                 custIndex++;
             
@@ -392,12 +394,9 @@ namespace Queues
 
             listbox[kasIndex].Items.RemoveAt(0);
 
-            dgv_klient.Rows.Add();
-            dgv_klient[0, dgv_klient.Rows.Count - 1].Value = Convert.ToString(cust.getNumber());
-            dgv_klient[1, dgv_klient.Rows.Count - 1].Value = cust.getTimeStart();
-            dgv_klient[2, dgv_klient.Rows.Count - 1].Value = cust.getTimeStop();
-            dgv_klient[3, dgv_klient.Rows.Count - 1].Value = cust.getStatus();
+            dgv_enter(cust);
             // зеленый
+            //kas_label[kasIndex]
 
             kas_timer[kasIndex].Enabled = false;
         }
@@ -408,6 +407,14 @@ namespace Queues
             label.Text = "Касса №" + (Index + 1) + "\nКлиент-" + cust.getNumber();
             // крассный
             kas_timer[Index].Enabled = true;
+        }
+        private void dgv_enter(Customer cust)
+        {
+            dgv_klient.Rows.Add();
+            dgv_klient[0, dgv_klient.Rows.Count - 1].Value = Convert.ToString(cust.getNumber());
+            dgv_klient[1, dgv_klient.Rows.Count - 1].Value = cust.getTimeStart();
+            dgv_klient[2, dgv_klient.Rows.Count - 1].Value = cust.getTimeStop();
+            dgv_klient[3, dgv_klient.Rows.Count - 1].Value = cust.getStatus();
         }
     }
 }
