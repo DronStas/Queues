@@ -224,13 +224,9 @@ namespace Queues
             kas_label[2] = Name_kas3;
 
             dgv_klient.Columns.Add("0", "№");
-            dgv_klient.Columns[0].Width = dgv_klient.Width*3 / 20;
             dgv_klient.Columns.Add("1", "Пришел");
-            dgv_klient.Columns[1].Width = dgv_klient.Width * 6 / 20 ;
             dgv_klient.Columns.Add("2", "Ушел");
-            dgv_klient.Columns[2].Width = dgv_klient.Width * 6 / 20 ;
             dgv_klient.Columns.Add("3", "Статус");
-            dgv_klient.Columns[3].Width = dgv_klient.Width * 5 / 20 ;
 
             ListKas1.DrawMode = DrawMode.OwnerDrawFixed;
             ListKas1.DrawItem += ListKas1_DrawItem;
@@ -427,12 +423,24 @@ namespace Queues
             dgv_klient[3, dgv_klient.Rows.Count - 1].Value = cust.getStatus();
         }
 
-        private void panel2_Paint(object sender, PaintEventArgs e)
+        private void Form1_Load(object sender, EventArgs e)
         {
-            dgv_klient.Columns[0].Width = dgv_klient.Width * 3 / 20;
-            dgv_klient.Columns[1].Width = dgv_klient.Width * 6 / 20;
-            dgv_klient.Columns[2].Width = dgv_klient.Width * 6 / 20;
+
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {          
+            dgv_klient.Columns[0].Width = dgv_klient.Width * 3 / 20;        
+            dgv_klient.Columns[1].Width = dgv_klient.Width * 6 / 20;     
+            dgv_klient.Columns[2].Width = dgv_klient.Width * 6 / 20;            
             dgv_klient.Columns[3].Width = dgv_klient.Width * 5 / 20;
+        }
+
+        private void btn_stop_Click(object sender, EventArgs e)
+        {
+
+            regularTime.increaseminute();
+           
         }
     }
 }
