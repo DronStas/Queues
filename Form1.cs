@@ -391,8 +391,6 @@ namespace Queues
             Customer cust = custQueue[kasIndex].Dequeue();
             cust.setTimeStop(regularTime);
 
-            listbox[kasIndex].Items.RemoveAt(0);
-
             dgv_enter(cust);
             // зеленый
             kas_label[kasIndex].ForeColor = Color.Green;
@@ -402,6 +400,7 @@ namespace Queues
         {
             Customer cust = custQueue[Index].Peek();
             label.Text = "Касса №" + (Index + 1) + "\nКлиент-" + cust.getNumber();
+            listbox[Index].Items.RemoveAt(0);
             // крассный
             kas_label[Index].ForeColor = Color.Red;
             kas_timer[Index].Enabled = true;
