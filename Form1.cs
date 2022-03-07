@@ -426,5 +426,13 @@ namespace Queues
             dgv_klient[2, dgv_klient.Rows.Count - 1].Value = cust.getTimeStop();
             dgv_klient[3, dgv_klient.Rows.Count - 1].Value = cust.getStatus();
         }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+            dgv_klient.Columns[0].Width = dgv_klient.Width * 3 / 20;
+            dgv_klient.Columns[1].Width = dgv_klient.Width * 6 / 20;
+            dgv_klient.Columns[2].Width = dgv_klient.Width * 6 / 20;
+            dgv_klient.Columns[3].Width = dgv_klient.Width * 5 / 20;
+        }
     }
 }

@@ -30,7 +30,7 @@ namespace Queues
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btn_stop = new System.Windows.Forms.Button();
             this.stopbox = new System.Windows.Forms.ComboBox();
@@ -60,6 +60,7 @@ namespace Queues
             this.kas1_timer = new System.Windows.Forms.Timer(this.components);
             this.kas2_timer = new System.Windows.Forms.Timer(this.components);
             this.kas3_timer = new System.Windows.Forms.Timer(this.components);
+            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.stsp_dgv)).BeginInit();
             this.panel2.SuspendLayout();
@@ -69,6 +70,7 @@ namespace Queues
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Blue;
+            this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.btn_stop);
             this.panel1.Controls.Add(this.stopbox);
             this.panel1.Controls.Add(this.startbox);
@@ -205,9 +207,9 @@ namespace Queues
             this.label2.Location = new System.Drawing.Point(0, 172);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(115, 47);
+            this.label2.Size = new System.Drawing.Size(180, 47);
             this.label2.TabIndex = 5;
-            this.label2.Text = "Time:";
+            this.label2.Text = "Refusal:";
             // 
             // door_label
             // 
@@ -324,6 +326,7 @@ namespace Queues
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1414, 711);
             this.panel2.TabIndex = 1;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // ListKas3
             // 
@@ -386,14 +389,14 @@ namespace Queues
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgv_klient.BackgroundColor = System.Drawing.Color.SkyBlue;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial Narrow", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_klient.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Arial Narrow", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_klient.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgv_klient.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_klient.Location = new System.Drawing.Point(941, 100);
             this.dgv_klient.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
@@ -475,6 +478,20 @@ namespace Queues
             // 
             this.kas3_timer.Tick += new System.EventHandler(this.kas3_timer_Tick);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Blue;
+            this.label1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label1.Font = new System.Drawing.Font("Forte", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label1.Location = new System.Drawing.Point(0, 219);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(198, 47);
+            this.label1.TabIndex = 11;
+            this.label1.Text = "Accepted:";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -526,6 +543,7 @@ namespace Queues
         private System.Windows.Forms.Timer kas2_timer;
         private System.Windows.Forms.Timer kas3_timer;
         private System.Windows.Forms.Button btn_stop;
+        private System.Windows.Forms.Label label1;
     }
 }
 
