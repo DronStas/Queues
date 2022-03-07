@@ -191,8 +191,7 @@ namespace Queues
                 {
                     status = "Отказ";
                 }
-                else status = number + "Принято";
-
+                else status = "Принято - " + number;
             }
 
             public String getStatus()
@@ -398,15 +397,15 @@ namespace Queues
             dgv_klient[2, dgv_klient.Rows.Count - 1].Value = cust.getTimeStop();
             dgv_klient[3, dgv_klient.Rows.Count - 1].Value = cust.getStatus();
             // зеленый
-
+            kas_label[kasIndex].ForeColor = Color.Green;
             kas_timer[kasIndex].Enabled = false;
         }
         private void labael_enter(Label label,int Index)
         {
-
             Customer cust = custQueue[Index].Peek();
             label.Text = "Касса №" + (Index + 1) + "\nКлиент-" + cust.getNumber();
             // крассный
+            kas_label[Index].ForeColor = Color.Red;
             kas_timer[Index].Enabled = true;
         }
     }
