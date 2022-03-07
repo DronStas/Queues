@@ -316,18 +316,30 @@ namespace Queues
         }
         private void ListKas1_DrawItem(object sender, DrawItemEventArgs e)
         {
-            TextRenderer.DrawText(e.Graphics, ListKas1.Items[e.Index].ToString(), e.Font,
-                e.Bounds, e.ForeColor, e.BackColor, TextFormatFlags.HorizontalCenter);
+            try{
+                TextRenderer.DrawText(e.Graphics, ListKas1.Items[e.Index].ToString(), e.Font,
+                    e.Bounds, e.ForeColor, e.BackColor, TextFormatFlags.HorizontalCenter);
+            }catch (Exception){
+                return;
+            }
         }
         private void ListKas2_DrawItem(object sender, DrawItemEventArgs e)
         {
+            try { 
             TextRenderer.DrawText(e.Graphics, ListKas2.Items[e.Index].ToString(), e.Font,
                            e.Bounds, e.ForeColor, e.BackColor, TextFormatFlags.HorizontalCenter);
-        }
+            }catch (Exception){
+                return;
+            }
+}
         private void ListKas3_DrawItem(object sender, DrawItemEventArgs e)
         {
+            try { 
             TextRenderer.DrawText(e.Graphics, ListKas3.Items[e.Index].ToString(), e.Font,
                                       e.Bounds, e.ForeColor, e.BackColor, TextFormatFlags.HorizontalCenter);
+            }catch (Exception){
+                return;
+            }
         }
 
         private void addClient_timer_Tick(object sender, EventArgs e)
