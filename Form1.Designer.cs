@@ -31,6 +31,10 @@ namespace Queues
         {
             this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.stopbox = new System.Windows.Forms.ComboBox();
+            this.startbox = new System.Windows.Forms.ComboBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.door_label = new System.Windows.Forms.Label();
             this.Start_btn = new System.Windows.Forms.Button();
@@ -50,11 +54,7 @@ namespace Queues
             this.Name_kas1 = new System.Windows.Forms.Label();
             this.regularTime_timer = new System.Windows.Forms.Timer(this.components);
             this.addClient_timer = new System.Windows.Forms.Timer(this.components);
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.startbox = new System.Windows.Forms.ComboBox();
-            this.stopbox = new System.Windows.Forms.ComboBox();
             this.kas1_timer = new System.Windows.Forms.Timer(this.components);
             this.kas2_timer = new System.Windows.Forms.Timer(this.components);
             this.kas3_timer = new System.Windows.Forms.Timer(this.components);
@@ -83,6 +83,90 @@ namespace Queues
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(200, 578);
             this.panel1.TabIndex = 0;
+            // 
+            // stopbox
+            // 
+            this.stopbox.FormattingEnabled = true;
+            this.stopbox.Items.AddRange(new object[] {
+            "1:00",
+            "2:00",
+            "3:00",
+            "4:00",
+            "5:00",
+            "6:00",
+            "7:00",
+            "8:00",
+            "9:00",
+            "10:00",
+            "11:00",
+            "12:00",
+            "13:00",
+            "14:00",
+            "15:00",
+            "16:00",
+            "17:00",
+            "18:00",
+            "19:00",
+            "20:00",
+            "21:00",
+            "22:00",
+            "23:00",
+            "24:00"});
+            this.stopbox.Location = new System.Drawing.Point(94, 71);
+            this.stopbox.Name = "stopbox";
+            this.stopbox.Size = new System.Drawing.Size(106, 30);
+            this.stopbox.TabIndex = 9;
+            // 
+            // startbox
+            // 
+            this.startbox.FormattingEnabled = true;
+            this.startbox.Items.AddRange(new object[] {
+            "1:00",
+            "2:00",
+            "3:00",
+            "4:00",
+            "5:00",
+            "6:00",
+            "7:00",
+            "8:00",
+            "9:00",
+            "10:00",
+            "11:00",
+            "12:00",
+            "13:00",
+            "14:00",
+            "15:00",
+            "16:00",
+            "17:00",
+            "18:00",
+            "19:00",
+            "20:00",
+            "21:00",
+            "22:00",
+            "23:00",
+            "24:00"});
+            this.startbox.Location = new System.Drawing.Point(0, 71);
+            this.startbox.Name = "startbox";
+            this.startbox.Size = new System.Drawing.Size(94, 30);
+            this.startbox.TabIndex = 8;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(0, 38);
+            this.textBox2.Multiline = true;
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(94, 36);
+            this.textBox2.TabIndex = 7;
+            this.textBox2.Text = "Начало";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(94, 38);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(106, 36);
+            this.textBox1.TabIndex = 6;
+            this.textBox1.Text = "Конец";
             // 
             // label2
             // 
@@ -220,7 +304,7 @@ namespace Queues
             this.ListKas3.ItemHeight = 57;
             this.ListKas3.Location = new System.Drawing.Point(496, 81);
             this.ListKas3.Name = "ListKas3";
-            this.ListKas3.Size = new System.Drawing.Size(149, 342);
+            this.ListKas3.Size = new System.Drawing.Size(149, 456);
             this.ListKas3.TabIndex = 7;
             this.ListKas3.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.ListKas3_DrawItem);
             // 
@@ -236,7 +320,7 @@ namespace Queues
             this.ListKas2.ItemHeight = 57;
             this.ListKas2.Location = new System.Drawing.Point(267, 81);
             this.ListKas2.Name = "ListKas2";
-            this.ListKas2.Size = new System.Drawing.Size(150, 344);
+            this.ListKas2.Size = new System.Drawing.Size(150, 458);
             this.ListKas2.TabIndex = 6;
             this.ListKas2.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.ListKas2_DrawItem);
             // 
@@ -252,7 +336,7 @@ namespace Queues
             this.ListKas1.ItemHeight = 57;
             this.ListKas1.Location = new System.Drawing.Point(39, 81);
             this.ListKas1.Name = "ListKas1";
-            this.ListKas1.Size = new System.Drawing.Size(150, 344);
+            this.ListKas1.Size = new System.Drawing.Size(150, 458);
             this.ListKas1.TabIndex = 5;
             this.ListKas1.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.ListKas1_DrawItem);
             // 
@@ -271,7 +355,7 @@ namespace Queues
             this.dgv_klient.ReadOnly = true;
             this.dgv_klient.RowHeadersVisible = false;
             this.dgv_klient.RowHeadersWidth = 51;
-            this.dgv_klient.Size = new System.Drawing.Size(346, 426);
+            this.dgv_klient.Size = new System.Drawing.Size(346, 458);
             this.dgv_klient.TabIndex = 4;
             // 
             // Name_klient
@@ -322,94 +406,10 @@ namespace Queues
             // 
             this.addClient_timer.Tick += new System.EventHandler(this.addClient_timer_Tick);
             // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(94, 38);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(106, 36);
-            this.textBox1.TabIndex = 6;
-            this.textBox1.Text = "Конец";
-            // 
             // contextMenuStrip1
             // 
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(0, 38);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(94, 36);
-            this.textBox2.TabIndex = 7;
-            this.textBox2.Text = "Начало";
-            // 
-            // startbox
-            // 
-            this.startbox.FormattingEnabled = true;
-            this.startbox.Items.AddRange(new object[] {
-            "1:00",
-            "2:00",
-            "3:00",
-            "4:00",
-            "5:00",
-            "6:00",
-            "7:00",
-            "8:00",
-            "9:00",
-            "10:00",
-            "11:00",
-            "12:00",
-            "13:00",
-            "14:00",
-            "15:00",
-            "16:00",
-            "17:00",
-            "18:00",
-            "19:00",
-            "20:00",
-            "21:00",
-            "22:00",
-            "23:00",
-            "24:00"});
-            this.startbox.Location = new System.Drawing.Point(0, 71);
-            this.startbox.Name = "startbox";
-            this.startbox.Size = new System.Drawing.Size(94, 30);
-            this.startbox.TabIndex = 8;
-            // 
-            // stopbox
-            // 
-            this.stopbox.FormattingEnabled = true;
-            this.stopbox.Items.AddRange(new object[] {
-            "1:00",
-            "2:00",
-            "3:00",
-            "4:00",
-            "5:00",
-            "6:00",
-            "7:00",
-            "8:00",
-            "9:00",
-            "10:00",
-            "11:00",
-            "12:00",
-            "13:00",
-            "14:00",
-            "15:00",
-            "16:00",
-            "17:00",
-            "18:00",
-            "19:00",
-            "20:00",
-            "21:00",
-            "22:00",
-            "23:00",
-            "24:00"});
-            this.stopbox.Location = new System.Drawing.Point(94, 71);
-            this.stopbox.Name = "stopbox";
-            this.stopbox.Size = new System.Drawing.Size(106, 30);
-            this.stopbox.TabIndex = 9;
             // 
             // kas1_timer
             // 
