@@ -91,7 +91,7 @@ namespace Queues
                     minutes++;
                 }
             }
-            public String getTime()
+            public String toString()
             {
                 String strTime = "";
                 if (hours < 10)
@@ -129,14 +129,23 @@ namespace Queues
                     throw new Exception("!(minutes>=0 && minutes<=60)");
             }
 
+            public int getHours() { return hours; }
+            public int getMinute() { return minutes; }
+
         }
         Time regularTime;
+        Time stopTime;
+        Time startTime;
         int custIndex = 1;
+        ListBox[] listbox = new ListBox[3];
+        Timer[] kas_timer = new Timer[3];
+        Label[] kas_label = new Label[3];
+        
         class Customer
         {
             private int number;
-            private Time start;
-            private Time stop;
+            private Time start=new Time();
+            private Time stop = new Time();
             private string status;
 
             public Customer()
@@ -152,37 +161,78 @@ namespace Queues
                 this.start = start;
                 this.stop = stop;
             }
-
-            public void setTimeStart(Time start)
-            {
-                this.start = start;
-            }
             public Customer(String status)
             {
                 this.status = status;
             }
-
+            public int getNumber()
+            {
+                return number;
+            }
+            public String getTimeStart()
+            {
+                return start.toString();
+            }
+            public String getTimeStop()
+            {
+                return stop.toString();
+            }
+            public void setTimeStart(Time start)
+            {
+                this.start.setTime(start.getHours(), start.getMinute());
+            }
+            public void setTimeStop(Time stop)
+            {
+                this.stop.setTime(stop.getHours(),stop.getMinute());
+            }
             public void setStatus(int number)
             {
-                String status = "";
                 if (number == 0)
                 {
-                    status = number + "Отказ";
+                    status = "Отказ";
                 }
                 else status = number + "Принято";
 
             }
 
-            public String getStatus(String status)
+            public String getStatus()
             {
                 return status;
             }
         }
+        Queue<Customer>[] custQueue = new Queue<Customer>[3];
         public Form1()
         {
             InitializeComponent();
             stsp_dgv.Rows.Add();
             regularTime = new Time();
+            
+
+            custQueue[0] = new Queue<Customer>();
+            custQueue[1] = new Queue<Customer>();
+            custQueue[2] = new Queue<Customer>();
+
+            listbox[0] = ListKas1;
+            listbox[1] = ListKas2;
+            listbox[2] = ListKas3;
+
+            kas_timer[0] = kas1_timer;
+            kas_timer[1] = kas2_timer;
+            kas_timer[2] = kas3_timer;
+
+            kas_label[0] = Name_kas1;
+            kas_label[1] = Name_kas2;
+            kas_label[2] = Name_kas3;
+
+            dgv_klient.Columns.Add("0", "№");
+            dgv_klient.Columns[0].Width = dgv_klient.Width*3 / 20;
+            dgv_klient.Columns.Add("1", "Пришел");
+            dgv_klient.Columns[1].Width = dgv_klient.Width * 6 / 20 ;
+            dgv_klient.Columns.Add("2", "Ушел");
+            dgv_klient.Columns[2].Width = dgv_klient.Width * 6 / 20 ;
+            dgv_klient.Columns.Add("3", "Статус");
+            dgv_klient.Columns[3].Width = dgv_klient.Width * 5 / 20 ;
+
             ListKas1.DrawMode = DrawMode.OwnerDrawFixed;
             ListKas1.DrawItem += ListKas1_DrawItem;
             ListKas2.DrawMode = DrawMode.OwnerDrawFixed;
@@ -190,25 +240,81 @@ namespace Queues
             ListKas3.DrawMode = DrawMode.OwnerDrawFixed;
             ListKas3.DrawItem += ListKas3_DrawItem;
         }
-
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-            //Name_kas1.Text += "\nКлиент";
-        }
         private void Start_btn_Click(object sender, EventArgs e)
         {
             regularTime.Serch(startbox.Text);
+
+            startTime = new Time();
+            startTime.Serch(startbox.Text);
+            stopTime = new Time();
+            stopTime.Serch(stopbox.Text);
+
             regularTime_timer.Enabled = true;
             addClient_timer.Enabled = true;
+
+            
         }
         private void regularTime_timer_Tick_1(object sender, EventArgs e)
         {
             regularTime.increaseminute();
-            
-            time_label.Text = "Time: " + regularTime.getTime();
-            door_label.Text = "Door: " + "Open";
-        }
+            time_label.Text = "Time: " + regularTime.toString();
+            if (regularTime.getHours() > startTime.getHours());
+            else
+            {
+                if (regularTime.getHours() == startTime.getHours())
+                {
+                    if (regularTime.getMinute() >= startTime.getMinute())
+                    {
 
+                    }
+                    else
+                    {
+                        door_label.Text = "Door: " + "Close";
+                        addClient_timer.Enabled = false;
+                    }
+                }
+                else
+                {
+                    door_label.Text = "Door: " + "Close";
+                    addClient_timer.Enabled = false;
+                }
+            }
+            if (regularTime.getHours() < stopTime.getHours())
+            {
+                door_label.Text = "Door: " + "Open";
+            }
+            else
+            {
+                if (regularTime.getHours() == stopTime.getHours())
+                {
+                    if (regularTime.getMinute() <= stopTime.getMinute())
+                    {
+                        door_label.Text = "Door: " + "Open";
+                    }
+                    else
+                    {
+                        door_label.Text = "Door: " + "Close";
+                        addClient_timer.Enabled = false;
+                    }
+                }
+                else
+                {
+                    door_label.Text = "Door: " + "Close";
+                    addClient_timer.Enabled = false;
+                }
+            }
+
+            for(int i = 0; i < 3; i++)
+            {
+                Random x = new Random();
+                int n = x.Next(5000, 10000);
+                if (custQueue[i].Count != 0&& kas_timer[i].Enabled!=true)
+                {
+                    kas_timer[i].Interval = n;
+                    labael_enter(kas_label[i], i);
+                }
+            }
+        }
         private void ListKas1_DrawItem(object sender, DrawItemEventArgs e)
         {
             TextRenderer.DrawText(e.Graphics, ListKas1.Items[e.Index].ToString(), e.Font,
@@ -219,7 +325,6 @@ namespace Queues
             TextRenderer.DrawText(e.Graphics, ListKas2.Items[e.Index].ToString(), e.Font,
                            e.Bounds, e.ForeColor, e.BackColor, TextFormatFlags.HorizontalCenter);
         }
-
         private void ListKas3_DrawItem(object sender, DrawItemEventArgs e)
         {
             TextRenderer.DrawText(e.Graphics, ListKas3.Items[e.Index].ToString(), e.Font,
@@ -227,20 +332,18 @@ namespace Queues
         }
 
         private void addClient_timer_Tick(object sender, EventArgs e)
-        {
+        { 
             addCust();
             Random x = new Random();
-            int n = x.Next(100, 500);
+            int n = x.Next(500,2000);
             addClient_timer.Interval = n;
+
         }
         private void addCust()
         {
             Customer cust = new Customer(custIndex);
             cust.setTimeStart(regularTime);
-            ListBox[] listbox = new ListBox[3];
-            listbox[0] = ListKas1;
-            listbox[1] = ListKas2;
-            listbox[2] = ListKas3;
+            
             int minqueu = ListKas1.Items.Count;
             int minIndex = 0;
             if (minqueu > ListKas2.Items.Count)
@@ -255,11 +358,13 @@ namespace Queues
             }
             if (minqueu < 6)
             {
+                cust.setStatus(minIndex + 1);
+                custQueue[minIndex].Enqueue(cust);
                 listbox[minIndex].Items.Add(custIndex);
             }
             else
             {
-
+                cust.setStatus(0);
             }
                 custIndex++;
             
@@ -267,7 +372,42 @@ namespace Queues
 
         private void kas1_timer_Tick(object sender, EventArgs e)
         {
+            kas_dgv(1);
+        }
 
+        private void kas2_timer_Tick(object sender, EventArgs e)
+        {
+            kas_dgv(2);
+        }
+
+        private void kas3_timer_Tick(object sender, EventArgs e)
+        {
+            kas_dgv(3);
+        }
+        private void kas_dgv(int kasIndex)
+        {
+            kasIndex--;
+            Customer cust = custQueue[kasIndex].Dequeue();
+            cust.setTimeStop(regularTime);
+
+            listbox[kasIndex].Items.RemoveAt(0);
+
+            dgv_klient.Rows.Add();
+            dgv_klient[0, dgv_klient.Rows.Count - 1].Value = Convert.ToString(cust.getNumber());
+            dgv_klient[1, dgv_klient.Rows.Count - 1].Value = cust.getTimeStart();
+            dgv_klient[2, dgv_klient.Rows.Count - 1].Value = cust.getTimeStop();
+            dgv_klient[3, dgv_klient.Rows.Count - 1].Value = cust.getStatus();
+            // зеленый
+
+            kas_timer[kasIndex].Enabled = false;
+        }
+        private void labael_enter(Label label,int Index)
+        {
+
+            Customer cust = custQueue[Index].Peek();
+            label.Text = "Касса №" + (Index + 1) + "\nКлиент-" + cust.getNumber();
+            // крассный
+            kas_timer[Index].Enabled = true;
         }
     }
 }
