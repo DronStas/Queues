@@ -30,8 +30,9 @@ namespace Queues
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.btn_stop = new System.Windows.Forms.Button();
             this.stopbox = new System.Windows.Forms.ComboBox();
             this.startbox = new System.Windows.Forms.ComboBox();
@@ -60,7 +61,6 @@ namespace Queues
             this.kas1_timer = new System.Windows.Forms.Timer(this.components);
             this.kas2_timer = new System.Windows.Forms.Timer(this.components);
             this.kas3_timer = new System.Windows.Forms.Timer(this.components);
-            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.stsp_dgv)).BeginInit();
             this.panel2.SuspendLayout();
@@ -85,10 +85,24 @@ namespace Queues
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Font = new System.Drawing.Font("Arial Narrow", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(267, 711);
             this.panel1.TabIndex = 0;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Blue;
+            this.label1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label1.Font = new System.Drawing.Font("Forte", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label1.Location = new System.Drawing.Point(0, 219);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(198, 47);
+            this.label1.TabIndex = 11;
+            this.label1.Text = "Accepted:";
             // 
             // btn_stop
             // 
@@ -102,7 +116,7 @@ namespace Queues
             this.btn_stop.Font = new System.Drawing.Font("Forte", 25.8F);
             this.btn_stop.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btn_stop.Location = new System.Drawing.Point(0, 525);
-            this.btn_stop.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_stop.Margin = new System.Windows.Forms.Padding(4);
             this.btn_stop.Name = "btn_stop";
             this.btn_stop.Size = new System.Drawing.Size(267, 62);
             this.btn_stop.TabIndex = 10;
@@ -138,7 +152,7 @@ namespace Queues
             "23:00",
             "24:00"});
             this.stopbox.Location = new System.Drawing.Point(125, 87);
-            this.stopbox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.stopbox.Margin = new System.Windows.Forms.Padding(4);
             this.stopbox.Name = "stopbox";
             this.stopbox.Size = new System.Drawing.Size(140, 35);
             this.stopbox.TabIndex = 9;
@@ -172,7 +186,7 @@ namespace Queues
             "23:00",
             "24:00"});
             this.startbox.Location = new System.Drawing.Point(0, 87);
-            this.startbox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.startbox.Margin = new System.Windows.Forms.Padding(4);
             this.startbox.Name = "startbox";
             this.startbox.Size = new System.Drawing.Size(124, 35);
             this.startbox.TabIndex = 8;
@@ -180,7 +194,7 @@ namespace Queues
             // textBox2
             // 
             this.textBox2.Location = new System.Drawing.Point(0, 47);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(4);
             this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(124, 43);
@@ -190,7 +204,7 @@ namespace Queues
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(125, 47);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(140, 43);
@@ -237,7 +251,7 @@ namespace Queues
             this.Start_btn.Font = new System.Drawing.Font("Forte", 25.8F);
             this.Start_btn.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.Start_btn.Location = new System.Drawing.Point(0, 587);
-            this.Start_btn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Start_btn.Margin = new System.Windows.Forms.Padding(4);
             this.Start_btn.Name = "Start_btn";
             this.Start_btn.Size = new System.Drawing.Size(267, 62);
             this.Start_btn.TabIndex = 3;
@@ -253,7 +267,7 @@ namespace Queues
             this.Pause_btn.Font = new System.Drawing.Font("Forte", 25.8F);
             this.Pause_btn.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.Pause_btn.Location = new System.Drawing.Point(0, 649);
-            this.Pause_btn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Pause_btn.Margin = new System.Windows.Forms.Padding(4);
             this.Pause_btn.Name = "Pause_btn";
             this.Pause_btn.Size = new System.Drawing.Size(267, 62);
             this.Pause_btn.TabIndex = 2;
@@ -275,7 +289,7 @@ namespace Queues
             this.Column2});
             this.stsp_dgv.Dock = System.Windows.Forms.DockStyle.Top;
             this.stsp_dgv.Location = new System.Drawing.Point(0, 47);
-            this.stsp_dgv.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.stsp_dgv.Margin = new System.Windows.Forms.Padding(4);
             this.stsp_dgv.MultiSelect = false;
             this.stsp_dgv.Name = "stsp_dgv";
             this.stsp_dgv.RowHeadersVisible = false;
@@ -322,7 +336,7 @@ namespace Queues
             this.panel2.Controls.Add(this.Name_kas1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(267, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1414, 711);
             this.panel2.TabIndex = 1;
@@ -339,7 +353,7 @@ namespace Queues
             this.ListKas3.FormattingEnabled = true;
             this.ListKas3.ItemHeight = 69;
             this.ListKas3.Location = new System.Drawing.Point(661, 100);
-            this.ListKas3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ListKas3.Margin = new System.Windows.Forms.Padding(4);
             this.ListKas3.Name = "ListKas3";
             this.ListKas3.Size = new System.Drawing.Size(199, 552);
             this.ListKas3.TabIndex = 7;
@@ -356,7 +370,7 @@ namespace Queues
             this.ListKas2.FormattingEnabled = true;
             this.ListKas2.ItemHeight = 69;
             this.ListKas2.Location = new System.Drawing.Point(356, 100);
-            this.ListKas2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ListKas2.Margin = new System.Windows.Forms.Padding(4);
             this.ListKas2.Name = "ListKas2";
             this.ListKas2.Size = new System.Drawing.Size(199, 554);
             this.ListKas2.TabIndex = 6;
@@ -373,7 +387,7 @@ namespace Queues
             this.ListKas1.FormattingEnabled = true;
             this.ListKas1.ItemHeight = 69;
             this.ListKas1.Location = new System.Drawing.Point(52, 100);
-            this.ListKas1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ListKas1.Margin = new System.Windows.Forms.Padding(4);
             this.ListKas1.Name = "ListKas1";
             this.ListKas1.Size = new System.Drawing.Size(199, 554);
             this.ListKas1.TabIndex = 5;
@@ -389,17 +403,17 @@ namespace Queues
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgv_klient.BackgroundColor = System.Drawing.Color.SkyBlue;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial Narrow", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_klient.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial Narrow", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_klient.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgv_klient.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_klient.Location = new System.Drawing.Point(941, 100);
-            this.dgv_klient.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgv_klient.Margin = new System.Windows.Forms.Padding(4);
             this.dgv_klient.Name = "dgv_klient";
             this.dgv_klient.ReadOnly = true;
             this.dgv_klient.RowHeadersVisible = false;
@@ -481,20 +495,6 @@ namespace Queues
             // 
             this.kas3_timer.Tick += new System.EventHandler(this.kas3_timer_Tick);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Blue;
-            this.label1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label1.Font = new System.Drawing.Font("Forte", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label1.Location = new System.Drawing.Point(0, 219);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(198, 47);
-            this.label1.TabIndex = 11;
-            this.label1.Text = "Accepted:";
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -502,7 +502,7 @@ namespace Queues
             this.ClientSize = new System.Drawing.Size(1681, 711);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.Text = "Form1";
             this.panel1.ResumeLayout(false);
