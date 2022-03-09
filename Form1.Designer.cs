@@ -30,7 +30,7 @@ namespace Queues
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
@@ -232,7 +232,7 @@ namespace Queues
             // 
             // btn_stop
             // 
-            this.btn_stop.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btn_stop.BackColor = System.Drawing.Color.DarkRed;
             this.btn_stop.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.btn_stop.FlatAppearance.BorderColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btn_stop.FlatAppearance.BorderSize = 0;
@@ -240,7 +240,7 @@ namespace Queues
             this.btn_stop.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btn_stop.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_stop.Font = new System.Drawing.Font("Forte", 25.8F);
-            this.btn_stop.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btn_stop.ForeColor = System.Drawing.Color.Black;
             this.btn_stop.Location = new System.Drawing.Point(0, 423);
             this.btn_stop.Name = "btn_stop";
             this.btn_stop.Size = new System.Drawing.Size(194, 50);
@@ -363,7 +363,7 @@ namespace Queues
             // 
             // Start_btn
             // 
-            this.Start_btn.BackColor = System.Drawing.SystemColors.Highlight;
+            this.Start_btn.BackColor = System.Drawing.Color.GreenYellow;
             this.Start_btn.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.Start_btn.FlatAppearance.BorderColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.Start_btn.FlatAppearance.BorderSize = 0;
@@ -371,7 +371,7 @@ namespace Queues
             this.Start_btn.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.Start_btn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.Start_btn.Font = new System.Drawing.Font("Forte", 25.8F);
-            this.Start_btn.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.Start_btn.ForeColor = System.Drawing.Color.Black;
             this.Start_btn.Location = new System.Drawing.Point(0, 473);
             this.Start_btn.Name = "Start_btn";
             this.Start_btn.Size = new System.Drawing.Size(194, 50);
@@ -382,11 +382,11 @@ namespace Queues
             // 
             // Pause_btn
             // 
-            this.Pause_btn.BackColor = System.Drawing.SystemColors.Highlight;
+            this.Pause_btn.BackColor = System.Drawing.Color.DarkRed;
             this.Pause_btn.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.Pause_btn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.Pause_btn.Font = new System.Drawing.Font("Forte", 25.8F);
-            this.Pause_btn.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.Pause_btn.ForeColor = System.Drawing.Color.Black;
             this.Pause_btn.Location = new System.Drawing.Point(0, 523);
             this.Pause_btn.Name = "Pause_btn";
             this.Pause_btn.Size = new System.Drawing.Size(194, 50);
@@ -558,14 +558,14 @@ namespace Queues
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgv_klient.BackgroundColor = System.Drawing.Color.SkyBlue;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial Narrow", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_klient.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Arial Narrow", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_klient.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgv_klient.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_klient.Location = new System.Drawing.Point(705, 76);
             this.dgv_klient.Name = "dgv_klient";

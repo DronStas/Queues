@@ -144,6 +144,7 @@ namespace Queues
         int accepted = 0;
         double speed = 1;
         bool check = false;
+        bool labl = false;
 
 
         class Customer
@@ -211,7 +212,7 @@ namespace Queues
             stsp_dgv.Rows.Add();
             regularTime = new Time();
             
-
+            
             custQueue[0] = new Queue<Customer>();
             custQueue[1] = new Queue<Customer>();
             custQueue[2] = new Queue<Customer>();
@@ -248,6 +249,7 @@ namespace Queues
         }
         private void Start_btn_Click(object sender, EventArgs e)
         {
+            labl = true;
             btn_stop.Enabled = true;
             Pause_btn.Enabled = true;
             Simul_text.Text = "Play";
@@ -308,6 +310,14 @@ namespace Queues
                     {
                         door_label.Text = "Door: " + "Close";
                         addClient_timer.Enabled = false;
+                        Start_btn.Enabled = true;
+                        Start_btn.ForeColor = Color.Black;
+                        Start_btn.BackColor = Color.GreenYellow;
+                        btn_stop.Enabled = false;
+                        btn_stop.BackColor = Color.DarkRed;
+                        Pause_btn.Enabled = false;
+                        Pause_btn.BackColor = Color.DarkRed;
+
 
                     }
                 }
@@ -446,12 +456,17 @@ namespace Queues
             dgv_klient[1, dgv_klient.Rows.Count - 1].Value = cust.getTimeStart();
             dgv_klient[2, dgv_klient.Rows.Count - 1].Value = cust.getTimeStop();
             dgv_klient[3, dgv_klient.Rows.Count - 1].Value = cust.getStatus();
+            if (cust.getStatus() =="Отказ")
+            dgv_klient[3, dgv_klient.Rows.Count - 1].Style.BackColor = Color.Red;
+            else
+            dgv_klient[3, dgv_klient.Rows.Count - 1].Style.BackColor = Color.GreenYellow;
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
             btn_stop.Enabled = false;
             Pause_btn.Enabled = false;
+
         }
 
         private void panel2_Paint(object sender, PaintEventArgs e)
@@ -464,6 +479,9 @@ namespace Queues
 
         private void btn_stop_Click(object sender, EventArgs e)
         {
+            check = false;
+            Pause_btn.Text = "Pause";
+            labl = false;
             Simul_text.Text = "Stop";
             Pause_btn.Enabled = false;
             btn_stop.Enabled = false;
@@ -494,6 +512,13 @@ namespace Queues
 
         private void trackBar1_Scroll(object sender, EventArgs e)
         {
+
+            if (labl)
+            {
+                Simul_text.Text = "Play";
+            }
+          
+            else Simul_text.Text = "Stop";
             int value = speed_trackBar.Value;
             if (value == 0)
                 speed = 0.25;
@@ -505,6 +530,7 @@ namespace Queues
                 speed = 2;
             if (value == 4)
                 speed = 4;
+            Simul_text.Text +=" - "+ speed;
             changeSpeed();
         }
 
@@ -529,11 +555,9 @@ namespace Queues
         private void Pause_btn_Click(object sender, EventArgs e)
         {
             Simul_text.Text = "Pause";
-            Start_btn.BackColor = Color.DarkRed;
-            Start_btn.ForeColor = Color.White;
+            Start_btn.BackColor = Color.DarkRed;           
             if (!check) {
-                Pause_btn.Text = "Pusk";
-               
+                Pause_btn.Text = "Play";               
                 Pause_btn.BackColor = Color.GreenYellow;
                 Pause_btn.ForeColor = Color.Black;
                 regularTime_timer.Stop();
@@ -544,8 +568,7 @@ namespace Queues
             {
                 Pause_btn.Text = "Pause";
                 Simul_text.Text = "Play";
-                Pause_btn.BackColor = Color.GreenYellow;
-                Pause_btn.ForeColor = Color.White;
+                Pause_btn.BackColor = Color.GreenYellow;               
                 regularTime_timer.Start();
                 addClient_timer.Start();
                 check = false;
