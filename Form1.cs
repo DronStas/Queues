@@ -490,18 +490,6 @@ namespace Queues
         {
             double fspeed = 100 / speed;
             regularTime_timer.Interval = (int)fspeed;
-
-            //fspeed = addClient_timer.Interval / speed;
-            //addClient_timer.Interval = (int)fspeed;
-
-            //fspeed = kas1_timer.Interval / speed;
-            //kas1_timer.Interval = (int)fspeed;
-
-            //fspeed = kas2_timer.Interval / speed;
-            //kas2_timer.Interval = (int)fspeed;
-
-            //fspeed = kas3_timer.Interval / speed;
-            //kas3_timer.Interval = (int)fspeed;
         }
 
         private void Pause_btn_Click(object sender, EventArgs e)
