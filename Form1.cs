@@ -145,7 +145,7 @@ namespace Queues
         double speed = 1;
         bool check = false;
         bool labl = false;
-
+        bool max = false;
 
         class Customer
         {
@@ -286,12 +286,14 @@ namespace Queues
                     {
                         door_label.Text = "Door: " + "Close";
                         addClient_timer.Enabled = false;
+              
                     }
                 }
                 else
                 {
                     door_label.Text = "Door: " + "Close";
                     addClient_timer.Enabled = false;
+             
                 }
             }
             if (regularTime.getHours() < stopTime.getHours())
@@ -310,6 +312,16 @@ namespace Queues
                     {
                         door_label.Text = "Door: " + "Close";
                         addClient_timer.Enabled = false;
+                    
+                    }
+                }
+                else
+                {
+                    door_label.Text = "Door: " + "Close";
+                    addClient_timer.Enabled = false;                
+                    if (Name_kas1.ForeColor == Color.GreenYellow && Name_kas2.ForeColor == Color.GreenYellow && Name_kas3.ForeColor == Color.GreenYellow && ListKas1.Items.Count == 0 && ListKas2.Items.Count == 0 && ListKas3.Items.Count == 0)
+                    {                      
+                        regularTime_timer.Stop();
                         Start_btn.Enabled = true;
                         Start_btn.ForeColor = Color.Black;
                         Start_btn.BackColor = Color.GreenYellow;
@@ -317,27 +329,21 @@ namespace Queues
                         btn_stop.BackColor = Color.DarkRed;
                         Pause_btn.Enabled = false;
                         Pause_btn.BackColor = Color.DarkRed;
-
-
                     }
-                }
-                else
-                {
-                    door_label.Text = "Door: " + "Close";
-                    addClient_timer.Enabled = false;
                 }
             }
 
             for(int i = 0; i < 3; i++)
             {
                 Random x = new Random();
-                int n = (int)(x.Next(1000, 10000)/speed);
+                int n = (int)(x.Next(4000, 6000)/speed);
                 if (custQueue[i].Count != 0&& kas_timer[i].Enabled!=true)
                 {
                     kas_timer[i].Interval = n;
                     labael_enter(kas_label[i], i);
                 }
             }
+           
         }
         private void ListKas1_DrawItem(object sender, DrawItemEventArgs e)
         {
@@ -377,6 +383,7 @@ namespace Queues
         }
         private void addCust()
         {
+            
             Customer cust = new Customer(custIndex);
             cust.setTimeStart(regularTime);
             
@@ -405,9 +412,11 @@ namespace Queues
                 refuse_label.Text = "Refusal: " + refuse;
                 cust.setStatus(0);
                 cust.setTimeStop(regularTime);
-                dgv_enter(cust);
+                dgv_enter(cust);                
             }
                 custIndex++;
+           
+           
             
         }
 
