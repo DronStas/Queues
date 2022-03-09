@@ -32,6 +32,7 @@ namespace Queues
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.btn_stop = new System.Windows.Forms.Button();
             this.stopbox = new System.Windows.Forms.ComboBox();
@@ -46,6 +47,8 @@ namespace Queues
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.time_label = new System.Windows.Forms.Label();
+            this.Simul_text = new System.Windows.Forms.Label();
+            this.Simul_lable = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.ListKas3 = new System.Windows.Forms.ListBox();
             this.ListKas2 = new System.Windows.Forms.ListBox();
@@ -61,9 +64,6 @@ namespace Queues
             this.kas1_timer = new System.Windows.Forms.Timer(this.components);
             this.kas2_timer = new System.Windows.Forms.Timer(this.components);
             this.kas3_timer = new System.Windows.Forms.Timer(this.components);
-            this.Simul_text = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.Simul_lable = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.stsp_dgv)).BeginInit();
             this.panel2.SuspendLayout();
@@ -94,6 +94,13 @@ namespace Queues
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(193, 578);
             this.panel1.TabIndex = 0;
+            // 
+            // panel3
+            // 
+            this.panel3.Location = new System.Drawing.Point(123, 306);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(8, 8);
+            this.panel3.TabIndex = 13;
             // 
             // label1
             // 
@@ -318,6 +325,33 @@ namespace Queues
             this.time_label.TabIndex = 0;
             this.time_label.Text = "Time:";
             // 
+            // Simul_text
+            // 
+            this.Simul_text.AutoSize = true;
+            this.Simul_text.BackColor = System.Drawing.Color.Blue;
+            this.Simul_text.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Simul_text.Font = new System.Drawing.Font("Forte", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Simul_text.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.Simul_text.Location = new System.Drawing.Point(0, 38);
+            this.Simul_text.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.Simul_text.Name = "Simul_text";
+            this.Simul_text.Size = new System.Drawing.Size(0, 38);
+            this.Simul_text.TabIndex = 12;
+            // 
+            // Simul_lable
+            // 
+            this.Simul_lable.AutoSize = true;
+            this.Simul_lable.BackColor = System.Drawing.Color.Blue;
+            this.Simul_lable.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Simul_lable.Font = new System.Drawing.Font("Forte", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Simul_lable.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.Simul_lable.Location = new System.Drawing.Point(0, 0);
+            this.Simul_lable.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.Simul_lable.Name = "Simul_lable";
+            this.Simul_lable.Size = new System.Drawing.Size(193, 38);
+            this.Simul_lable.TabIndex = 14;
+            this.Simul_lable.Text = "Simulation:";
+            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Orange;
@@ -480,40 +514,6 @@ namespace Queues
             // kas3_timer
             // 
             this.kas3_timer.Tick += new System.EventHandler(this.kas3_timer_Tick);
-            // 
-            // Simul_text
-            // 
-            this.Simul_text.AutoSize = true;
-            this.Simul_text.BackColor = System.Drawing.Color.Blue;
-            this.Simul_text.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Simul_text.Font = new System.Drawing.Font("Forte", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Simul_text.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.Simul_text.Location = new System.Drawing.Point(0, 38);
-            this.Simul_text.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.Simul_text.Name = "Simul_text";
-            this.Simul_text.Size = new System.Drawing.Size(0, 38);
-            this.Simul_text.TabIndex = 12;
-            // 
-            // panel3
-            // 
-            this.panel3.Location = new System.Drawing.Point(123, 306);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(8, 8);
-            this.panel3.TabIndex = 13;
-            // 
-            // Simul_lable
-            // 
-            this.Simul_lable.AutoSize = true;
-            this.Simul_lable.BackColor = System.Drawing.Color.Blue;
-            this.Simul_lable.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Simul_lable.Font = new System.Drawing.Font("Forte", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Simul_lable.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.Simul_lable.Location = new System.Drawing.Point(0, 0);
-            this.Simul_lable.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.Simul_lable.Name = "Simul_lable";
-            this.Simul_lable.Size = new System.Drawing.Size(193, 38);
-            this.Simul_lable.TabIndex = 14;
-            this.Simul_lable.Text = "Simulation:";
             // 
             // Form1
             // 
