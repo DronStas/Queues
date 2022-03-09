@@ -142,6 +142,7 @@ namespace Queues
         Label[] kas_label = new Label[3];
         int refuse = 0;
         int accepted = 0;
+        double speed = 1;
 
 
         class Customer
@@ -311,7 +312,7 @@ namespace Queues
             for(int i = 0; i < 3; i++)
             {
                 Random x = new Random();
-                int n = x.Next(1000, 10000);
+                int n = (int)(x.Next(1000, 10000)/speed);
                 if (custQueue[i].Count != 0&& kas_timer[i].Enabled!=true)
                 {
                     kas_timer[i].Interval = n;
@@ -351,7 +352,7 @@ namespace Queues
         { 
             addCust();
             Random x = new Random();
-            int n = x.Next(500,1000);
+            int n = (int)(x.Next(500,1000)/speed);
             addClient_timer.Interval = n;
 
         }
@@ -473,7 +474,36 @@ namespace Queues
 
         private void trackBar1_Scroll(object sender, EventArgs e)
         {
-            //trackBar.
+            int value = speed_trackBar.Value;
+            if (value == 0)
+                speed = 0.25;
+            if (value == 1)
+                speed = 0.5;
+            if (value == 2)
+                speed = 1;
+            if (value == 3)
+                speed = 2;
+            if (value == 4)
+                speed = 4;
+            changeSpeed();
+        }
+
+        private void changeSpeed()
+        {
+            double fspeed = 100 / speed;
+            regularTime_timer.Interval = (int)fspeed;
+
+            //fspeed = addClient_timer.Interval / speed;
+            //addClient_timer.Interval = (int)fspeed;
+
+            //fspeed = kas1_timer.Interval / speed;
+            //kas1_timer.Interval = (int)fspeed;
+
+            //fspeed = kas2_timer.Interval / speed;
+            //kas2_timer.Interval = (int)fspeed;
+
+            //fspeed = kas3_timer.Interval / speed;
+            //kas3_timer.Interval = (int)fspeed;
         }
 
         private void Pause_btn_Click(object sender, EventArgs e)
