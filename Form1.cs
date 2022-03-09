@@ -308,6 +308,7 @@ namespace Queues
                     {
                         door_label.Text = "Door: " + "Close";
                         addClient_timer.Enabled = false;
+
                     }
                 }
                 else
@@ -449,7 +450,8 @@ namespace Queues
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            
+            btn_stop.Enabled = false;
+            Pause_btn.Enabled = false;
         }
 
         private void panel2_Paint(object sender, PaintEventArgs e)
@@ -531,25 +533,21 @@ namespace Queues
             Start_btn.ForeColor = Color.White;
             if (!check) {
                 Pause_btn.Text = "Pusk";
+               
                 Pause_btn.BackColor = Color.GreenYellow;
                 Pause_btn.ForeColor = Color.Black;
                 regularTime_timer.Stop();
-                addClient_timer.Stop();
-                kas1_timer.Stop();
-                kas2_timer.Stop();
-                kas3_timer.Stop();
+                addClient_timer.Stop();            
                 check = true;
             }
             else
             {
                 Pause_btn.Text = "Pause";
+                Simul_text.Text = "Play";
                 Pause_btn.BackColor = Color.GreenYellow;
                 Pause_btn.ForeColor = Color.White;
                 regularTime_timer.Start();
                 addClient_timer.Start();
-                kas1_timer.Start();
-                kas2_timer.Start();
-                kas3_timer.Start();
                 check = false;
             }
 
