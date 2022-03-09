@@ -140,7 +140,10 @@ namespace Queues
         ListBox[] listbox = new ListBox[3];
         Timer[] kas_timer = new Timer[3];
         Label[] kas_label = new Label[3];
-        
+        int refuse = 0;
+        int accepted = 0;
+
+
         class Customer
         {
             private int number;
@@ -228,6 +231,12 @@ namespace Queues
             dgv_klient.Columns.Add("2", "Ушел");
             dgv_klient.Columns.Add("3", "Статус");
 
+            startbox.Text = "9:00";
+            stopbox.Text = "18:00";
+            startbox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            stopbox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+
+
             ListKas1.DrawMode = DrawMode.OwnerDrawFixed;
             ListKas1.DrawItem += ListKas1_DrawItem;
             ListKas2.DrawMode = DrawMode.OwnerDrawFixed;
@@ -302,7 +311,7 @@ namespace Queues
             for(int i = 0; i < 3; i++)
             {
                 Random x = new Random();
-                int n = x.Next(5000, 10000);
+                int n = x.Next(1000, 10000);
                 if (custQueue[i].Count != 0&& kas_timer[i].Enabled!=true)
                 {
                     kas_timer[i].Interval = n;
@@ -368,9 +377,12 @@ namespace Queues
                 cust.setStatus(minIndex + 1);
                 custQueue[minIndex].Enqueue(cust);
                 listbox[minIndex].Items.Add(custIndex);
+                
             }
             else
             {
+                refuse++;
+                refuse_label.Text = "Refusal: " + refuse;
                 cust.setStatus(0);
                 cust.setTimeStop(regularTime);
                 dgv_enter(cust);
@@ -404,6 +416,8 @@ namespace Queues
             kas_label[kasIndex].ForeColor = Color.GreenYellow;
             kas_label[kasIndex].Text = "Касса №" + (kasIndex + 1);
             kas_timer[kasIndex].Enabled = false;
+            accepted++;
+            accepted_label.Text = "Accepted: " + accepted;
         }
         private void labael_enter(Label label,int Index)
         {
@@ -413,6 +427,7 @@ namespace Queues
             // крассный
             kas_label[Index].ForeColor = Color.DarkRed;
             kas_timer[Index].Enabled = true;
+
         }
         private void dgv_enter(Customer cust)
         {
@@ -425,7 +440,7 @@ namespace Queues
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         private void panel2_Paint(object sender, PaintEventArgs e)
@@ -441,6 +456,11 @@ namespace Queues
 
             regularTime.increaseminute();
            
+        }
+
+        private void trackBar1_Scroll(object sender, EventArgs e)
+        {
+            //trackBar.
         }
     }
 }
