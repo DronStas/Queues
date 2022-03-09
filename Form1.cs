@@ -467,6 +467,8 @@ namespace Queues
                 kas_label[i].ForeColor = Color.GreenYellow;
                 kas_label[i].Text = "Касса №" + (i + 1);
             }
+            refuse_label.Text = "Refusal: 0";
+            accepted_label.Text = "Accepted: 0";
         }
 
         private void trackBar1_Scroll(object sender, EventArgs e)
