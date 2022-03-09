@@ -143,6 +143,7 @@ namespace Queues
         int refuse = 0;
         int accepted = 0;
         double speed = 1;
+        bool check = false;
 
 
         class Customer
@@ -247,17 +248,24 @@ namespace Queues
         }
         private void Start_btn_Click(object sender, EventArgs e)
         {
+            btn_stop.Enabled = true;
+            Pause_btn.Enabled = true;
+            Simul_text.Text = "Play";
+            Start_btn.BackColor = Color.DarkRed;
+            Start_btn.ForeColor = Color.White;
+            btn_stop.BackColor = Color.GreenYellow;
+            btn_stop.ForeColor = Color.Black;
+            Pause_btn.BackColor = Color.GreenYellow;
+            Pause_btn.ForeColor = Color.Black;
             regularTime.Serch(startbox.Text);
-
             startTime = new Time();
             startTime.Serch(startbox.Text);
             stopTime = new Time();
             stopTime.Serch(stopbox.Text);
-
             regularTime_timer.Enabled = true;
             addClient_timer.Enabled = true;
+            Start_btn.Enabled = false;
 
-            
         }
         private void regularTime_timer_Tick_1(object sender, EventArgs e)
         {
@@ -453,7 +461,17 @@ namespace Queues
         }
 
         private void btn_stop_Click(object sender, EventArgs e)
-        {            
+        {
+            Simul_text.Text = "Stop";
+            Pause_btn.Enabled = false;
+            btn_stop.Enabled = false;
+            Start_btn.Enabled = true;
+            btn_stop.ForeColor = Color.White;
+            btn_stop.BackColor = Color.DarkRed;
+            Start_btn.BackColor = Color.GreenYellow;
+            Start_btn.ForeColor = Color.Black;
+            Pause_btn.BackColor = Color.DarkRed;
+            Pause_btn.ForeColor = Color.White;
             regularTime_timer.Stop();
             addClient_timer.Stop();      
             this.dgv_klient.Rows.Clear();
@@ -468,6 +486,8 @@ namespace Queues
                 kas_label[i].ForeColor = Color.GreenYellow;
                 kas_label[i].Text = "Касса №" + (i + 1);
             }
+            refuse_label.Text = "Refusal: 0";
+            accepted_label.Text = "Accepted: 0";
         }
 
         private void trackBar1_Scroll(object sender, EventArgs e)
@@ -493,14 +513,35 @@ namespace Queues
         }
 
         private void Pause_btn_Click(object sender, EventArgs e)
-        {           
-            regularTime_timer.Stop();
-            addClient_timer.Stop();
-            kas1_timer.Stop();
-            kas2_timer.Stop();
-            kas3_timer.Stop();
-            
+        {
+            Simul_text.Text = "Pause";
+            Start_btn.BackColor = Color.DarkRed;
+            Start_btn.ForeColor = Color.White;
+            if (!check) {
+                Pause_btn.Text = "Pusk";
+                Pause_btn.BackColor = Color.GreenYellow;
+                Pause_btn.ForeColor = Color.Black;
+                regularTime_timer.Stop();
+                addClient_timer.Stop();
+                kas1_timer.Stop();
+                kas2_timer.Stop();
+                kas3_timer.Stop();
+                check = true;
+            }
+            else
+            {
+                Pause_btn.Text = "Pause";
+                Pause_btn.BackColor = Color.GreenYellow;
+                Pause_btn.ForeColor = Color.White;
+                regularTime_timer.Start();
+                addClient_timer.Start();
+                kas1_timer.Start();
+                kas2_timer.Start();
+                kas3_timer.Start();
+                check = false;
+            }
 
         }
+    
     }
 }
