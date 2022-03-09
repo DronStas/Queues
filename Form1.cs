@@ -453,10 +453,21 @@ namespace Queues
         }
 
         private void btn_stop_Click(object sender, EventArgs e)
-        {
-
-            regularTime.increaseminute();
-           
+        {            
+            regularTime_timer.Stop();
+            addClient_timer.Stop();      
+            this.dgv_klient.Rows.Clear();
+            time_label.Text = "Time";
+            door_label.Text = "Door: " + "Close";
+            custIndex = 1;
+            for (int i = 0; i < 3; i++)
+            {
+                kas_timer[i].Stop();
+                listbox[i].Items.Clear();           
+                custQueue[i].Clear();
+                kas_label[i].ForeColor = Color.GreenYellow;
+                kas_label[i].Text = "Касса №" + (i + 1);
+            }
         }
 
         private void trackBar1_Scroll(object sender, EventArgs e)
@@ -491,6 +502,17 @@ namespace Queues
 
             //fspeed = kas3_timer.Interval / speed;
             //kas3_timer.Interval = (int)fspeed;
+        }
+
+        private void Pause_btn_Click(object sender, EventArgs e)
+        {           
+            regularTime_timer.Stop();
+            addClient_timer.Stop();
+            kas1_timer.Stop();
+            kas2_timer.Stop();
+            kas3_timer.Stop();
+            
+
         }
     }
 }
