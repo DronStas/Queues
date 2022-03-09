@@ -30,8 +30,17 @@ namespace Queues
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.speed_trackBar = new System.Windows.Forms.TrackBar();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.accepted_label = new System.Windows.Forms.Label();
             this.btn_stop = new System.Windows.Forms.Button();
             this.stopbox = new System.Windows.Forms.ComboBox();
@@ -49,6 +58,7 @@ namespace Queues
             this.Simul_text = new System.Windows.Forms.Label();
             this.Simul_lable = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
             this.ListKas3 = new System.Windows.Forms.ListBox();
             this.ListKas2 = new System.Windows.Forms.ListBox();
             this.ListKas1 = new System.Windows.Forms.ListBox();
@@ -63,22 +73,12 @@ namespace Queues
             this.kas1_timer = new System.Windows.Forms.Timer(this.components);
             this.kas2_timer = new System.Windows.Forms.Timer(this.components);
             this.kas3_timer = new System.Windows.Forms.Timer(this.components);
-            this.trackBar1 = new System.Windows.Forms.TrackBar();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
+            this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.speed_trackBar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stsp_dgv)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_klient)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
-            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -103,10 +103,113 @@ namespace Queues
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Font = new System.Drawing.Font("Arial Narrow", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(259, 705);
             this.panel1.TabIndex = 0;
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.label6);
+            this.panel4.Controls.Add(this.label5);
+            this.panel4.Controls.Add(this.label4);
+            this.panel4.Controls.Add(this.label3);
+            this.panel4.Controls.Add(this.label2);
+            this.panel4.Controls.Add(this.label1);
+            this.panel4.Controls.Add(this.speed_trackBar);
+            this.panel4.Location = new System.Drawing.Point(0, 379);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(256, 133);
+            this.panel4.TabIndex = 8;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Arial Narrow", 10.8F);
+            this.label6.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label6.Location = new System.Drawing.Point(230, 110);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(19, 23);
+            this.label6.TabIndex = 22;
+            this.label6.Text = "4";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Arial Narrow", 10.8F);
+            this.label5.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label5.Location = new System.Drawing.Point(175, 110);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(19, 23);
+            this.label5.TabIndex = 21;
+            this.label5.Text = "2";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Arial Narrow", 10.8F);
+            this.label4.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label4.Location = new System.Drawing.Point(3, 110);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(32, 23);
+            this.label4.TabIndex = 20;
+            this.label4.Text = "1/4";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Arial Narrow", 10.8F);
+            this.label3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label3.Location = new System.Drawing.Point(58, 110);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(32, 23);
+            this.label3.TabIndex = 19;
+            this.label3.Text = "1/2";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Arial Narrow", 10.8F);
+            this.label2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label2.Location = new System.Drawing.Point(120, 110);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(19, 23);
+            this.label2.TabIndex = 18;
+            this.label2.Text = "1";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Blue;
+            this.label1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label1.Font = new System.Drawing.Font("Forte", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label1.Location = new System.Drawing.Point(0, 0);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(127, 47);
+            this.label1.TabIndex = 17;
+            this.label1.Text = "Speed";
+            // 
+            // speed_trackBar
+            // 
+            this.speed_trackBar.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.speed_trackBar.Location = new System.Drawing.Point(0, 77);
+            this.speed_trackBar.Margin = new System.Windows.Forms.Padding(1);
+            this.speed_trackBar.Maximum = 4;
+            this.speed_trackBar.Name = "speed_trackBar";
+            this.speed_trackBar.Size = new System.Drawing.Size(256, 56);
+            this.speed_trackBar.TabIndex = 15;
+            this.speed_trackBar.Value = 2;
+            this.speed_trackBar.Scroll += new System.EventHandler(this.trackBar1_Scroll);
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.SkyBlue;
+            this.panel3.Location = new System.Drawing.Point(-10, 363);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(269, 10);
+            this.panel3.TabIndex = 16;
             // 
             // accepted_label
             // 
@@ -134,7 +237,7 @@ namespace Queues
             this.btn_stop.Font = new System.Drawing.Font("Forte", 25.8F);
             this.btn_stop.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btn_stop.Location = new System.Drawing.Point(0, 519);
-            this.btn_stop.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_stop.Margin = new System.Windows.Forms.Padding(4);
             this.btn_stop.Name = "btn_stop";
             this.btn_stop.Size = new System.Drawing.Size(259, 62);
             this.btn_stop.TabIndex = 10;
@@ -171,7 +274,7 @@ namespace Queues
             "23:00",
             "24:00"});
             this.stopbox.Location = new System.Drawing.Point(121, 181);
-            this.stopbox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.stopbox.Margin = new System.Windows.Forms.Padding(4);
             this.stopbox.Name = "stopbox";
             this.stopbox.Size = new System.Drawing.Size(140, 35);
             this.stopbox.TabIndex = 9;
@@ -205,7 +308,7 @@ namespace Queues
             "23:00",
             "24:00"});
             this.startbox.Location = new System.Drawing.Point(-4, 181);
-            this.startbox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.startbox.Margin = new System.Windows.Forms.Padding(4);
             this.startbox.Name = "startbox";
             this.startbox.Size = new System.Drawing.Size(124, 35);
             this.startbox.TabIndex = 8;
@@ -213,7 +316,7 @@ namespace Queues
             // textBox2
             // 
             this.textBox2.Location = new System.Drawing.Point(-4, 140);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(4);
             this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
             this.textBox2.ReadOnly = true;
@@ -224,7 +327,7 @@ namespace Queues
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(121, 140);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
@@ -272,7 +375,7 @@ namespace Queues
             this.Start_btn.Font = new System.Drawing.Font("Forte", 25.8F);
             this.Start_btn.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.Start_btn.Location = new System.Drawing.Point(0, 581);
-            this.Start_btn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Start_btn.Margin = new System.Windows.Forms.Padding(4);
             this.Start_btn.Name = "Start_btn";
             this.Start_btn.Size = new System.Drawing.Size(259, 62);
             this.Start_btn.TabIndex = 3;
@@ -288,7 +391,7 @@ namespace Queues
             this.Pause_btn.Font = new System.Drawing.Font("Forte", 25.8F);
             this.Pause_btn.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.Pause_btn.Location = new System.Drawing.Point(0, 643);
-            this.Pause_btn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Pause_btn.Margin = new System.Windows.Forms.Padding(4);
             this.Pause_btn.Name = "Pause_btn";
             this.Pause_btn.Size = new System.Drawing.Size(259, 62);
             this.Pause_btn.TabIndex = 2;
@@ -310,7 +413,7 @@ namespace Queues
             this.Column2});
             this.stsp_dgv.Dock = System.Windows.Forms.DockStyle.Top;
             this.stsp_dgv.Location = new System.Drawing.Point(0, 141);
-            this.stsp_dgv.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.stsp_dgv.Margin = new System.Windows.Forms.Padding(4);
             this.stsp_dgv.MultiSelect = false;
             this.stsp_dgv.Name = "stsp_dgv";
             this.stsp_dgv.RowHeadersVisible = false;
@@ -385,11 +488,19 @@ namespace Queues
             this.panel2.Controls.Add(this.Name_kas1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(259, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1422, 705);
             this.panel2.TabIndex = 1;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.Blue;
+            this.panel5.Location = new System.Drawing.Point(896, -16);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(14, 732);
+            this.panel5.TabIndex = 17;
             // 
             // ListKas3
             // 
@@ -402,7 +513,7 @@ namespace Queues
             this.ListKas3.FormattingEnabled = true;
             this.ListKas3.ItemHeight = 77;
             this.ListKas3.Location = new System.Drawing.Point(661, 100);
-            this.ListKas3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ListKas3.Margin = new System.Windows.Forms.Padding(4);
             this.ListKas3.Name = "ListKas3";
             this.ListKas3.Size = new System.Drawing.Size(199, 616);
             this.ListKas3.TabIndex = 7;
@@ -419,7 +530,7 @@ namespace Queues
             this.ListKas2.FormattingEnabled = true;
             this.ListKas2.ItemHeight = 77;
             this.ListKas2.Location = new System.Drawing.Point(356, 100);
-            this.ListKas2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ListKas2.Margin = new System.Windows.Forms.Padding(4);
             this.ListKas2.Name = "ListKas2";
             this.ListKas2.Size = new System.Drawing.Size(199, 618);
             this.ListKas2.TabIndex = 6;
@@ -436,7 +547,7 @@ namespace Queues
             this.ListKas1.FormattingEnabled = true;
             this.ListKas1.ItemHeight = 77;
             this.ListKas1.Location = new System.Drawing.Point(52, 100);
-            this.ListKas1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ListKas1.Margin = new System.Windows.Forms.Padding(4);
             this.ListKas1.Name = "ListKas1";
             this.ListKas1.Size = new System.Drawing.Size(199, 618);
             this.ListKas1.TabIndex = 5;
@@ -452,21 +563,22 @@ namespace Queues
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgv_klient.BackgroundColor = System.Drawing.Color.SkyBlue;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial Narrow", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_klient.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial Narrow", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_klient.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgv_klient.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_klient.Location = new System.Drawing.Point(940, 94);
-            this.dgv_klient.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgv_klient.Margin = new System.Windows.Forms.Padding(4);
             this.dgv_klient.Name = "dgv_klient";
             this.dgv_klient.ReadOnly = true;
             this.dgv_klient.RowHeadersVisible = false;
             this.dgv_klient.RowHeadersWidth = 51;
+            this.dgv_klient.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgv_klient.Size = new System.Drawing.Size(469, 569);
             this.dgv_klient.TabIndex = 4;
             // 
@@ -544,117 +656,6 @@ namespace Queues
             // 
             this.kas3_timer.Tick += new System.EventHandler(this.kas3_timer_Tick);
             // 
-            // trackBar1
-            // 
-            this.trackBar1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.trackBar1.Location = new System.Drawing.Point(0, 77);
-            this.trackBar1.Margin = new System.Windows.Forms.Padding(1);
-            this.trackBar1.Maximum = 4;
-            this.trackBar1.Name = "trackBar1";
-            this.trackBar1.Size = new System.Drawing.Size(256, 56);
-            this.trackBar1.TabIndex = 15;
-            this.trackBar1.Value = 2;
-            this.trackBar1.Scroll += new System.EventHandler(this.trackBar1_Scroll);
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.SkyBlue;
-            this.panel3.Location = new System.Drawing.Point(-10, 363);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(269, 10);
-            this.panel3.TabIndex = 16;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Blue;
-            this.label1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label1.Font = new System.Drawing.Font("Forte", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label1.Location = new System.Drawing.Point(0, 0);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(127, 47);
-            this.label1.TabIndex = 17;
-            this.label1.Text = "Speed";
-            // 
-            // panel4
-            // 
-            this.panel4.Controls.Add(this.label6);
-            this.panel4.Controls.Add(this.label5);
-            this.panel4.Controls.Add(this.label4);
-            this.panel4.Controls.Add(this.label3);
-            this.panel4.Controls.Add(this.label2);
-            this.panel4.Controls.Add(this.label1);
-            this.panel4.Controls.Add(this.trackBar1);
-            this.panel4.Location = new System.Drawing.Point(0, 379);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(256, 133);
-            this.panel4.TabIndex = 8;
-            // 
-            // panel5
-            // 
-            this.panel5.BackColor = System.Drawing.Color.Blue;
-            this.panel5.Location = new System.Drawing.Point(896, -16);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(14, 732);
-            this.panel5.TabIndex = 17;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial Narrow", 10.8F);
-            this.label2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label2.Location = new System.Drawing.Point(120, 110);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(19, 23);
-            this.label2.TabIndex = 18;
-            this.label2.Text = "1";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Arial Narrow", 10.8F);
-            this.label3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label3.Location = new System.Drawing.Point(58, 110);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(32, 23);
-            this.label3.TabIndex = 19;
-            this.label3.Text = "1/2";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Arial Narrow", 10.8F);
-            this.label4.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label4.Location = new System.Drawing.Point(3, 110);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(32, 23);
-            this.label4.TabIndex = 20;
-            this.label4.Text = "1/4";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Arial Narrow", 10.8F);
-            this.label5.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label5.Location = new System.Drawing.Point(175, 110);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(19, 23);
-            this.label5.TabIndex = 21;
-            this.label5.Text = "2";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Arial Narrow", 10.8F);
-            this.label6.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label6.Location = new System.Drawing.Point(230, 110);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(19, 23);
-            this.label6.TabIndex = 22;
-            this.label6.Text = "4";
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -662,19 +663,19 @@ namespace Queues
             this.ClientSize = new System.Drawing.Size(1681, 705);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.speed_trackBar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.stsp_dgv)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_klient)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -713,7 +714,7 @@ namespace Queues
         private System.Windows.Forms.Label accepted_label;
         private System.Windows.Forms.Label Simul_text;
         private System.Windows.Forms.Label Simul_lable;
-        private System.Windows.Forms.TrackBar trackBar1;
+        private System.Windows.Forms.TrackBar speed_trackBar;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel4;
