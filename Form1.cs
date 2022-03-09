@@ -145,7 +145,7 @@ namespace Queues
         double speed = 1;
         bool check = false;
         bool labl = false;
-
+        bool max = false;
 
         class Customer
         {
@@ -249,10 +249,12 @@ namespace Queues
         }
         private void Start_btn_Click(object sender, EventArgs e)
         {
+            stopbox.Enabled = false;
+            startbox.Enabled = false;
             labl = true;
             btn_stop.Enabled = true;
             Pause_btn.Enabled = true;
-            Simul_text.Text = "Play";
+            Simul_text.Text = "Play  -  " + speed;
             Start_btn.BackColor = Color.DarkRed;
             Start_btn.ForeColor = Color.White;
             btn_stop.BackColor = Color.GreenYellow;
@@ -286,12 +288,14 @@ namespace Queues
                     {
                         door_label.Text = "Door: " + "Close";
                         addClient_timer.Enabled = false;
+              
                     }
                 }
                 else
                 {
                     door_label.Text = "Door: " + "Close";
                     addClient_timer.Enabled = false;
+             
                 }
             }
             if (regularTime.getHours() < stopTime.getHours())
@@ -310,6 +314,19 @@ namespace Queues
                     {
                         door_label.Text = "Door: " + "Close";
                         addClient_timer.Enabled = false;
+                    
+                    }
+                }
+                else
+                {
+                    door_label.Text = "Door: " + "Close";
+                    addClient_timer.Enabled = false;                
+                    if (Name_kas1.ForeColor == Color.GreenYellow && Name_kas2.ForeColor == Color.GreenYellow && Name_kas3.ForeColor == Color.GreenYellow && ListKas1.Items.Count == 0 && ListKas2.Items.Count == 0 && ListKas3.Items.Count == 0)
+                    {
+                        stopbox.Enabled = true;
+                        startbox.Enabled = true;
+                        Simul_text.Text = "Stop";
+                        regularTime_timer.Stop();
                         Start_btn.Enabled = true;
                         Start_btn.ForeColor = Color.Black;
                         Start_btn.BackColor = Color.GreenYellow;
@@ -317,14 +334,7 @@ namespace Queues
                         btn_stop.BackColor = Color.DarkRed;
                         Pause_btn.Enabled = false;
                         Pause_btn.BackColor = Color.DarkRed;
-
-
                     }
-                }
-                else
-                {
-                    door_label.Text = "Door: " + "Close";
-                    addClient_timer.Enabled = false;
                 }
             }
 
@@ -338,6 +348,7 @@ namespace Queues
                     labael_enter(kas_label[i], i);
                 }
             }
+           
         }
         private void ListKas1_DrawItem(object sender, DrawItemEventArgs e)
         {
@@ -377,6 +388,7 @@ namespace Queues
         }
         private void addCust()
         {
+            
             Customer cust = new Customer(custIndex);
             cust.setTimeStart(regularTime);
             
@@ -405,9 +417,11 @@ namespace Queues
                 refuse_label.Text = "Refusal: " + refuse;
                 cust.setStatus(0);
                 cust.setTimeStop(regularTime);
-                dgv_enter(cust);
+                dgv_enter(cust);                
             }
                 custIndex++;
+           
+           
             
         }
 
@@ -479,10 +493,12 @@ namespace Queues
 
         private void btn_stop_Click(object sender, EventArgs e)
         {
+            stopbox.Enabled = true;
+            startbox.Enabled = true;
             check = false;
-            Pause_btn.Text = "Pause";
+            Pause_btn.Text = "Pause  -  " + speed;
             labl = false;
-            Simul_text.Text = "Stop";
+            Simul_text.Text = "Stop  -  " + speed;
             Pause_btn.Enabled = false;
             btn_stop.Enabled = false;
             Start_btn.Enabled = true;
@@ -542,7 +558,7 @@ namespace Queues
 
         private void Pause_btn_Click(object sender, EventArgs e)
         {
-            Simul_text.Text = "Pause";
+            Simul_text.Text = "Pause  -  " + speed;
             Start_btn.BackColor = Color.DarkRed;           
             if (!check) {
                 Pause_btn.Text = "Play";               
@@ -555,7 +571,7 @@ namespace Queues
             else
             {
                 Pause_btn.Text = "Pause";
-                Simul_text.Text = "Play";
+                Simul_text.Text = "Play  -  " + speed;
                 Pause_btn.BackColor = Color.GreenYellow;               
                 regularTime_timer.Start();
                 addClient_timer.Start();
