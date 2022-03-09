@@ -331,7 +331,7 @@ namespace Queues
             for(int i = 0; i < 3; i++)
             {
                 Random x = new Random();
-                int n = (int)(x.Next(1000, 10000)/speed);
+                int n = (int)(x.Next(4000, 6000)/speed);
                 if (custQueue[i].Count != 0&& kas_timer[i].Enabled!=true)
                 {
                     kas_timer[i].Interval = n;
