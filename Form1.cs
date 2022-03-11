@@ -145,7 +145,6 @@ namespace Queues
         double speed = 1;
         bool check = false;
         bool labl = false;
-        bool max = false;
 
         class Customer
         {
@@ -484,7 +483,11 @@ namespace Queues
         }
 
         private void panel2_Paint(object sender, PaintEventArgs e)
-        {          
+        {
+            if (this.Width < 1422)
+                this.Width = 1422;
+            if (this.Height < 705)
+                this.Height = 705;
             dgv_klient.Columns[0].Width = dgv_klient.Width * 3 / 20;        
             dgv_klient.Columns[1].Width = dgv_klient.Width * 6 / 20;     
             dgv_klient.Columns[2].Width = dgv_klient.Width * 6 / 20;            
